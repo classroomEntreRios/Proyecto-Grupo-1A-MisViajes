@@ -3,19 +3,18 @@ Desarrollador Full Stack 2020 - Entre Ríos
 Proyecto Grupo 1 A
 
 Integrantes:
+            - Albarenque, Martín
             
-            Albarenque, Martín
-            
-            Albornoz, Hernán
+            - Albornoz, Hernán
            
-            Alvarez, Fabricio
+            - Alvarez, Fabricio
            
-            Biskupski, Verónica
+            - Biskupski, Verónica
            
-            Blanc, Sebastián
+            - Blanc, Sebastián
            
-            Boujon, Marcelo
+            - Boujon, Marcelo
            
-            Caffa, Juan Pedro
+            - Caffa, Juan Pedro
            
-            Cuatrin, Ignacio
+            - Cuatrin, Ignacio
