@@ -1,6 +1,6 @@
 <h1 align="center">Curso: Desarrollador Full Stack 2020</h1>
 <h3 align="center">ENTRE RÍOS</h3>
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=proyecto-g1a&label=Profile%20views&color=0e75b6&style=flat" alt="proyecto-g1a" /> </p>
+<p align="right"> <img src="https://komarev.com/ghpvc/?username=proyecto-g1a&label=Profile%20views&color=0e75b6&style=flat" alt="proyecto-g1a" /> </p>
 
 - 🔭 Actualmente trabajamos en [el proyecto final](https://github.com/orgs/classroomEntreRios/teams/proyecto-g1a)
 
