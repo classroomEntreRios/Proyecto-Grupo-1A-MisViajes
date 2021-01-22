@@ -1,4 +1,4 @@
-<h1 align="center">Curso: Desarrollador Full Stack 2020 - Entre Ríos</h1>
+<h2 align="center">Desarrollador Full Stack 2020 - Entre Ríos</h2>
 <h1 align="center"><i>Proyecto Explor.Arg</i></h1>
 <p align="right"> <img src="https://komarev.com/ghpvc/?username=proyecto-g1a&label=Profile%20views&color=0e75b6&style=flat" alt="proyecto-g1a" /> </p>
 
