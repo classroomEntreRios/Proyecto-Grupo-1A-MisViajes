@@ -16,9 +16,7 @@
             
             - Alvarez, Fabricio
             
-            - Biskupski, Verónica  
-            
-            - Blanc, Sebastián 
+            - Biskupski, Verónica
             
             - Boujon, Marcelo    
             
