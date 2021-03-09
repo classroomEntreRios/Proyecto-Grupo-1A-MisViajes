@@ -1,0 +1,2 @@
+D:\Curso Full Stack\TP3\IndexTF3\IndexTF3\obj\Debug\IndexTF3.csprojAssemblyReference.cache
+D:\Curso Full Stack\TP3\IndexTF3\IndexTF3\obj\Debug\IndexTF3.csproj.CoreCompileInputs.cache
