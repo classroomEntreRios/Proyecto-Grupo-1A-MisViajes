@@ -1,0 +1,146 @@
+<header>
+    <nav class="navbar">
+        <div class="contenedorU2">
+            <a href="#">Inicio</a>
+            <a href="#news">Noticias</a>
+            <a href="#contact">Contacto</a>
+            <a href="#">Login</a>
+            <a href="#">Registro</a>
+        </div>
+    </nav>
+    <div class="fotoLog">
+        <div class="container-texto2">
+        </div>
+    </div>
+</header>
+
+<div class="txt1">
+    <h1>Registro de Usuario</h1>
+</div>
+
+<div class="container">
+    <form class="needs-validation" novalidate>
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <label for="validationCustom01">Nombres</label>
+                <input type="text" class="form-control" id="validationCustom01" value="" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="validationCustom02">Apellido</label>
+                <input type="text" class="form-control" id="validationCustom02" value="" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <div class="form-group1">
+                    <label for="formGroupExampleInput">Nombre de Usuario</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="form-group1">
+                    <label for="formGroupExampleInput">Numero de Telefono</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <label for="validationCustom03">Correo Electrónico</label>
+                <input type="text" class="form-control" id="validationCustom03" required>
+                <div class="invalid-feedback">
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="validationCustom05">Correo Electrónico</label>
+                <input type="text" class="form-control" id="validationCustom05" required placeholder="Ingrese nuevamente el correo electrónico">
+                <div class="invalid-feedback">
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <div class="form-group1">
+                    <label for="formGroupExampleInput">Contraseña</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="form-group1">
+                    <label for="formGroupExampleInput">Contraseña</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ingrese nuevamente la contraseña">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                    Acepto los términos y condiciones.
+                </label>
+                <div class="invalid-feedback">
+                    Debe aceptar los terminos y condiciones para poder continuar.
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Enviar Registro</button>
+    </form>
+
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+</div>
+<div class="footer-dark">
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="#">Web design</a></li>
+                        <li><a href="#">Development</a></li>
+                        <li><a href="#">Hosting</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>Acerca de</h3>
+                    <ul>
+                        <li><a href="#">Compañia</a></li>
+                        <li><a href="#">Equipo</a></li>
+                        <li><a href="#">Carrera</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 item text">
+                    <h3>Grupo 1.A Desarrollador FullStack - Entre Ríos</h3>
+                    <p>Equipo integrado por 4 estudiantes de programación FullStack.</p>
+                </div>
+                <div class="col item social"><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i
+                            class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a
+                        href="#"><i class="fab fa-instagram"></i></a></div>
+            </div>
+            <p class="copyright">Grupo 1.A © 2020 - Entre Ríos</p>
+        </div>
+    </footer>
