@@ -39,7 +39,7 @@
 /*Imagen / Parallax*/
 
 .logotipo{
-    background:url("/assets/Palacio2.jpg");
+    background:url("/Bundles/assets/Palacio2.jpg");
     width: 100%;
     min-width: 450px;
     height: 100vh;
@@ -359,7 +359,7 @@ figure .trasera{
   /*Segunda Imagen*/
 
   .contenedor-texto2{
-    background:url("/assets/Palmar.jpg");
+    background:url("/Bundles/assets/Palmar.jpg");
     width: 100%;
     min-width: 450px;
     height: 60vh;
