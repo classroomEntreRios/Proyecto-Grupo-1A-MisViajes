@@ -1,0 +1,126 @@
+<body>
+  <div class="d-flex">
+    <div id="sidebar-container" class="bg-primary">
+      <div class="logo">
+        <h4 class="text-dark font-weith-bold">Viajar</h4>
+      </div>
+      <div class="menu">
+        <a href="#ventana1" class="btn d-block p-3" data-toggle="modal"><i class="fas fa-user-friends"></i>
+          Usuario</a>
+        <a href="a" class="btn d-block p-3"><i class="far fa-id-card"></i> Editar</a>
+        <a href="a" class="d-block p-3"><i class="fab fa-forumbee"></i> Foro</a>
+        <a href="a" class="d-block p-3"><i class="fas fa-poll"></i> Estadisticas</a>
+        <a href="a" class="d-block p-3"><i class="fas fa-cloud-sun"></i> Clima</a>
+        <a href="a" class="d-block p-3"><i class="fas fa-cog"></i> Configuración</a>
+        <a href="a" class="d-block p-3"><i class="fas fa-sign-out-alt"></i> Salir</a>
+      </div>
+    </div>
+    <div class="w-100">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <form class="form-inline position-relative my-2 d-inline-block">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Buscar">
+            <button class="btn btn-search position-absolute" type="submit"><i class="fas fa-search"></i></button>
+          </form>
+          <div class="col-lg-9"></div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <img src="assets/ping.png" class="img-fluid rounded-circle avatar mr-2">
+                  Juan P. Caffa
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Editar</a></li>
+                  <li><a class="dropdown-item" href="#">Configuración</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#">Salir</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="modal" id="ventana1" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>$('#myModal').on('shown.bs.modal', function () {
+          $('#myInput').trigger('focus')
+        })
+      </script>
+      <!--    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <form class="form-inline position-relative my-2 d-inline-block">
+                        <input class="form-control mr-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                        <button class="btn btn-search position-absolute" type="submit"><i
+                                class="fas fa-search"></i></button>
+                    </form>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="assets/ping.png" class="img-fluid rounded-circle avatar mr-2">
+                                  Juan P Caffa
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="#">Mi perfil</a>
+                                  <a class="dropdown-item" href="#">Posteos</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" href="#">Cerrar Sesión</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>-->
+      <div id="content">
+        <section>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-9">
+                <h1 class="font-weigth-bold mb-0">Bienvenido...</h1>
+                <p class="lead text-muted">En esta sección podras realizar consultas y modificaciones con respecto a la
+                  administración de la página como del foro.</p>
+              </div>
+
+              <div class="col-lg-3">
+
+              </div>
+
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>

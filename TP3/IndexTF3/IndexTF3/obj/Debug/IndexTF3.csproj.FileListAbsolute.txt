@@ -182,3 +182,8 @@ D:\Proyecto Final\Proyecto-Grupo-1A-MisViajes\TP3\IndexTF3\IndexTF3\obj\Debug\In
 D:\Proyecto Final\Proyecto-Grupo-1A-MisViajes\TP3\IndexTF3\IndexTF3\obj\Debug\IndexTF3.csproj.CopyComplete
 D:\Proyecto Final\Proyecto-Grupo-1A-MisViajes\TP3\IndexTF3\IndexTF3\obj\Debug\IndexTF3.dll
 D:\Proyecto Final\Proyecto-Grupo-1A-MisViajes\TP3\IndexTF3\IndexTF3\obj\Debug\IndexTF3.pdb
+D:\Proyecto Final\Proyecto-Grupo-1A-MisViajes\TP3\IndexTF3\IndexTF3\bin\System.Web.Cors.dll
+D:\Proyecto Final\Proyecto-Grupo-1A-MisViajes\TP3\IndexTF3\IndexTF3\bin\System.Web.Http.Cors.dll
+D:\Proyecto Final\Proyecto-Grupo-1A-MisViajes\TP3\IndexTF3\IndexTF3\bin\System.Web.Http.Cors.xml
+D:\Proyecto Final\Proyecto-Grupo-1A-MisViajes\TP3\IndexTF3\IndexTF3\bin\System.Web.Http.WebHost.dll
+D:\Proyecto Final\Proyecto-Grupo-1A-MisViajes\TP3\IndexTF3\IndexTF3\bin\System.Web.Http.WebHost.xml

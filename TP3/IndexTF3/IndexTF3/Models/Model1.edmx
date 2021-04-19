@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="mis_viajesModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="mis_viajesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="chat">
@@ -83,11 +83,12 @@ advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ningu
           <Key>
             <PropertyRef Name="usu_id" />
           </Key>
-          <Property Name="usu_id" Type="int" Nullable="false" />
-          <Property Name="usu_nom" Type="varchar" MaxLength="50" />
-          <Property Name="usu_ape" Type="varbinary" MaxLength="50" />
-          <Property Name="usu_cor" Type="varbinary" MaxLength="50" />
-          <Property Name="usu_cel" Type="varchar" MaxLength="50" />
+          <Property Name="usu_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usu_ali" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="usu_nom_com" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="usu_con" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="usu_cor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="usu_cel" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="usu_niv_id" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_chat_usuario">
@@ -126,7 +127,7 @@ advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ningu
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_itinerario_destino">
+        <Association Name="FK_itinerario_destino1">
           <End Role="destino" Type="Self.destino" Multiplicity="1" />
           <End Role="itinerario" Type="Self.itinerario" Multiplicity="*" />
           <ReferentialConstraint>
@@ -162,7 +163,7 @@ advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ningu
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="mis_viajesModel1StoreContainer">
+        <EntityContainer Name="mis_viajesModelStoreContainer">
           <EntitySet Name="departamento" EntityType="Self.departamento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="destino" EntityType="Self.destino" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="itinerario" EntityType="Self.itinerario" Schema="dbo" store:Type="Tables" />
@@ -190,7 +191,7 @@ advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ningu
             <End Role="localidad" EntitySet="localidad" />
             <End Role="destino" EntitySet="destino" />
           </AssociationSet>
-          <AssociationSet Name="FK_itinerario_destino" Association="Self.FK_itinerario_destino">
+          <AssociationSet Name="FK_itinerario_destino1" Association="Self.FK_itinerario_destino1">
             <End Role="destino" EntitySet="destino" />
             <End Role="itinerario" EntitySet="itinerario" />
           </AssociationSet>
@@ -207,7 +208,7 @@ advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ningu
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="mis_viajesModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="mis_viajesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="departamento">
           <Key>
             <PropertyRef Name="dep_id" />
@@ -233,7 +234,7 @@ advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ningu
           <Property Name="des_lat" Type="Geography" />
           <Property Name="des_lon" Type="Geography" />
           <NavigationProperty Name="localidad" Relationship="Self.FK_destino_localidad" FromRole="destino" ToRole="localidad" />
-          <NavigationProperty Name="itinerario" Relationship="Self.FK_itinerario_destino" FromRole="destino" ToRole="itinerario" />
+          <NavigationProperty Name="itinerario" Relationship="Self.FK_itinerario_destino1" FromRole="destino" ToRole="itinerario" />
         </EntityType>
         <EntityType Name="itinerario">
           <Key>
@@ -242,7 +243,7 @@ advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ningu
           <Property Name="iti_id" Type="Int32" Nullable="false" />
           <Property Name="iti_des_id" Type="Int32" Nullable="false" />
           <Property Name="iti_usu_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="destino" Relationship="Self.FK_itinerario_destino" FromRole="itinerario" ToRole="destino" />
+          <NavigationProperty Name="destino" Relationship="Self.FK_itinerario_destino1" FromRole="itinerario" ToRole="destino" />
           <NavigationProperty Name="usuario" Relationship="Self.FK_itinerario_usuario" FromRole="itinerario" ToRole="usuario" />
         </EntityType>
         <EntityType Name="localidad">
@@ -281,11 +282,12 @@ advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ningu
           <Key>
             <PropertyRef Name="usu_id" />
           </Key>
-          <Property Name="usu_id" Type="Int32" Nullable="false" />
-          <Property Name="usu_nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="usu_ape" Type="Binary" MaxLength="50" FixedLength="false" />
-          <Property Name="usu_cor" Type="Binary" MaxLength="50" FixedLength="false" />
-          <Property Name="usu_cel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="usu_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usu_ali" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="usu_nom_com" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="usu_con" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="usu_cor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="usu_cel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="usu_niv_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="itinerario" Relationship="Self.FK_itinerario_usuario" FromRole="usuario" ToRole="itinerario" />
           <NavigationProperty Name="chat" Relationship="Self.FK_chat_usuario" FromRole="usuario" ToRole="chat" />
@@ -339,7 +341,7 @@ advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ningu
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_itinerario_destino">
+        <Association Name="FK_itinerario_destino1">
           <End Role="destino" Type="Self.destino" Multiplicity="1" />
           <End Role="itinerario" Type="Self.itinerario" Multiplicity="*" />
           <ReferentialConstraint>
@@ -375,7 +377,7 @@ advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ningu
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="mis_viajesEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="mis_viajesEntities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="departamento" EntityType="Self.departamento" />
           <EntitySet Name="destino" EntityType="Self.destino" />
           <EntitySet Name="itinerario" EntityType="Self.itinerario" />
@@ -396,7 +398,7 @@ advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ningu
             <End Role="localidad" EntitySet="localidad" />
             <End Role="destino" EntitySet="destino" />
           </AssociationSet>
-          <AssociationSet Name="FK_itinerario_destino" Association="Self.FK_itinerario_destino">
+          <AssociationSet Name="FK_itinerario_destino1" Association="Self.FK_itinerario_destino1">
             <End Role="destino" EntitySet="destino" />
             <End Role="itinerario" EntitySet="itinerario" />
           </AssociationSet>
@@ -414,9 +416,9 @@ advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ningu
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="mis_viajesModel1StoreContainer" CdmEntityContainer="mis_viajesEntities1">
+        <EntityContainerMapping StorageEntityContainer="mis_viajesModelStoreContainer" CdmEntityContainer="mis_viajesEntities3">
           <EntitySetMapping Name="departamento">
-            <EntityTypeMapping TypeName="mis_viajesModel1.departamento">
+            <EntityTypeMapping TypeName="mis_viajesModel.departamento">
               <MappingFragment StoreEntitySet="departamento">
                 <ScalarProperty Name="dep_id" ColumnName="dep_id" />
                 <ScalarProperty Name="dep_nom" ColumnName="dep_nom" />
@@ -427,7 +429,7 @@ advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ningu
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="destino">
-            <EntityTypeMapping TypeName="mis_viajesModel1.destino">
+            <EntityTypeMapping TypeName="mis_viajesModel.destino">
               <MappingFragment StoreEntitySet="destino">
                 <ScalarProperty Name="des_id" ColumnName="des_id" />
                 <ScalarProperty Name="des_nom" ColumnName="des_nom" />
@@ -441,7 +443,7 @@ advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ningu
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="itinerario">
-            <EntityTypeMapping TypeName="mis_viajesModel1.itinerario">
+            <EntityTypeMapping TypeName="mis_viajesModel.itinerario">
               <MappingFragment StoreEntitySet="itinerario">
                 <ScalarProperty Name="iti_id" ColumnName="iti_id" />
                 <ScalarProperty Name="iti_des_id" ColumnName="iti_des_id" />
@@ -450,7 +452,7 @@ advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ningu
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="localidad">
-            <EntityTypeMapping TypeName="mis_viajesModel1.localidad">
+            <EntityTypeMapping TypeName="mis_viajesModel.localidad">
               <MappingFragment StoreEntitySet="localidad">
                 <ScalarProperty Name="loc_id" ColumnName="loc_id" />
                 <ScalarProperty Name="loc_nom" ColumnName="loc_nom" />
@@ -462,7 +464,7 @@ advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ningu
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="provincia">
-            <EntityTypeMapping TypeName="mis_viajesModel1.provincia">
+            <EntityTypeMapping TypeName="mis_viajesModel.provincia">
               <MappingFragment StoreEntitySet="provincia">
                 <ScalarProperty Name="pro_id" ColumnName="pro_id" />
                 <ScalarProperty Name="pro_nom" ColumnName="pro_nom" />
@@ -471,7 +473,7 @@ advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ningu
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="mis_viajesModel1.sysdiagrams">
+            <EntityTypeMapping TypeName="mis_viajesModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -482,11 +484,12 @@ advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ningu
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="usuario">
-            <EntityTypeMapping TypeName="mis_viajesModel1.usuario">
+            <EntityTypeMapping TypeName="mis_viajesModel.usuario">
               <MappingFragment StoreEntitySet="usuario">
                 <ScalarProperty Name="usu_id" ColumnName="usu_id" />
-                <ScalarProperty Name="usu_nom" ColumnName="usu_nom" />
-                <ScalarProperty Name="usu_ape" ColumnName="usu_ape" />
+                <ScalarProperty Name="usu_ali" ColumnName="usu_ali" />
+                <ScalarProperty Name="usu_nom_com" ColumnName="usu_nom_com" />
+                <ScalarProperty Name="usu_con" ColumnName="usu_con" />
                 <ScalarProperty Name="usu_cor" ColumnName="usu_cor" />
                 <ScalarProperty Name="usu_cel" ColumnName="usu_cel" />
                 <ScalarProperty Name="usu_niv_id" ColumnName="usu_niv_id" />
@@ -494,7 +497,7 @@ advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ningu
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="chat">
-            <EntityTypeMapping TypeName="mis_viajesModel1.chat">
+            <EntityTypeMapping TypeName="mis_viajesModel.chat">
               <MappingFragment StoreEntitySet="chat">
                 <ScalarProperty Name="cha_id" ColumnName="cha_id" />
                 <ScalarProperty Name="cha_hor" ColumnName="cha_hor" />

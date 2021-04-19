@@ -22,9 +22,10 @@ namespace IndexTF3.Models
         }
     
         public int usu_id { get; set; }
-        public string usu_nom { get; set; }
-        public byte[] usu_ape { get; set; }
-        public byte[] usu_cor { get; set; }
+        public string usu_ali { get; set; }
+        public string usu_nom_com { get; set; }
+        public string usu_con { get; set; }
+        public string usu_cor { get; set; }
         public string usu_cel { get; set; }
         public int usu_niv_id { get; set; }
     

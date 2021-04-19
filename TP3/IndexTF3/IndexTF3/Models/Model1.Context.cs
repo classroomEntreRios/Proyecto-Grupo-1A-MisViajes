@@ -13,10 +13,10 @@ namespace IndexTF3.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class mis_viajesEntities1 : DbContext
+    public partial class mis_viajesEntities3 : DbContext
     {
-        public mis_viajesEntities1()
-            : base("name=mis_viajesEntities1")
+        public mis_viajesEntities3()
+            : base("name=mis_viajesEntities3")
         {
         }
     

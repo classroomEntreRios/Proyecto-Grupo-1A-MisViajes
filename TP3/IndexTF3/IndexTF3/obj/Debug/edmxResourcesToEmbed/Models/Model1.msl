@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="mis_viajesModel1StoreContainer" CdmEntityContainer="mis_viajesEntities1">
+  <EntityContainerMapping StorageEntityContainer="mis_viajesModelStoreContainer" CdmEntityContainer="mis_viajesEntities2">
     <EntitySetMapping Name="departamento">
-      <EntityTypeMapping TypeName="mis_viajesModel1.departamento">
+      <EntityTypeMapping TypeName="mis_viajesModel.departamento">
         <MappingFragment StoreEntitySet="departamento">
           <ScalarProperty Name="dep_id" ColumnName="dep_id" />
           <ScalarProperty Name="dep_nom" ColumnName="dep_nom" />
@@ -13,7 +13,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="destino">
-      <EntityTypeMapping TypeName="mis_viajesModel1.destino">
+      <EntityTypeMapping TypeName="mis_viajesModel.destino">
         <MappingFragment StoreEntitySet="destino">
           <ScalarProperty Name="des_id" ColumnName="des_id" />
           <ScalarProperty Name="des_nom" ColumnName="des_nom" />
@@ -27,7 +27,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="itinerario">
-      <EntityTypeMapping TypeName="mis_viajesModel1.itinerario">
+      <EntityTypeMapping TypeName="mis_viajesModel.itinerario">
         <MappingFragment StoreEntitySet="itinerario">
           <ScalarProperty Name="iti_id" ColumnName="iti_id" />
           <ScalarProperty Name="iti_des_id" ColumnName="iti_des_id" />
@@ -36,7 +36,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="localidad">
-      <EntityTypeMapping TypeName="mis_viajesModel1.localidad">
+      <EntityTypeMapping TypeName="mis_viajesModel.localidad">
         <MappingFragment StoreEntitySet="localidad">
           <ScalarProperty Name="loc_id" ColumnName="loc_id" />
           <ScalarProperty Name="loc_nom" ColumnName="loc_nom" />
@@ -48,7 +48,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="provincia">
-      <EntityTypeMapping TypeName="mis_viajesModel1.provincia">
+      <EntityTypeMapping TypeName="mis_viajesModel.provincia">
         <MappingFragment StoreEntitySet="provincia">
           <ScalarProperty Name="pro_id" ColumnName="pro_id" />
           <ScalarProperty Name="pro_nom" ColumnName="pro_nom" />
@@ -57,7 +57,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="mis_viajesModel1.sysdiagrams">
+      <EntityTypeMapping TypeName="mis_viajesModel.sysdiagrams">
         <MappingFragment StoreEntitySet="sysdiagrams">
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -68,7 +68,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="usuario">
-      <EntityTypeMapping TypeName="mis_viajesModel1.usuario">
+      <EntityTypeMapping TypeName="mis_viajesModel.usuario">
         <MappingFragment StoreEntitySet="usuario">
           <ScalarProperty Name="usu_id" ColumnName="usu_id" />
           <ScalarProperty Name="usu_nom" ColumnName="usu_nom" />
@@ -80,7 +80,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="chat">
-      <EntityTypeMapping TypeName="mis_viajesModel1.chat">
+      <EntityTypeMapping TypeName="mis_viajesModel.chat">
         <MappingFragment StoreEntitySet="chat">
           <ScalarProperty Name="cha_id" ColumnName="cha_id" />
           <ScalarProperty Name="cha_hor" ColumnName="cha_hor" />

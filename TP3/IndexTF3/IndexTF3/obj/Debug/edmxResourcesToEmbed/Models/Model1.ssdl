@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="mis_viajesModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="mis_viajesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
   <EntityType Name="chat">
@@ -80,8 +80,8 @@ advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ningu
     </Key>
     <Property Name="usu_id" Type="int" Nullable="false" />
     <Property Name="usu_nom" Type="varchar" MaxLength="50" />
-    <Property Name="usu_ape" Type="varbinary" MaxLength="50" />
-    <Property Name="usu_cor" Type="varbinary" MaxLength="50" />
+    <Property Name="usu_ape" Type="varchar" MaxLength="50" />
+    <Property Name="usu_cor" Type="varchar" MaxLength="50" />
     <Property Name="usu_cel" Type="varchar" MaxLength="50" />
     <Property Name="usu_niv_id" Type="int" Nullable="false" />
   </EntityType>
@@ -122,6 +122,18 @@ advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ningu
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_itinerario_destino">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+    <End Role="itinerario" Type="Self.itinerario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="itinerario">
+        <PropertyRef Name="iti_des_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_itinerario_destino1">
     <End Role="destino" Type="Self.destino" Multiplicity="1" />
     <End Role="itinerario" Type="Self.itinerario" Multiplicity="*" />
     <ReferentialConstraint>
@@ -130,18 +142,6 @@ advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ningu
       </Principal>
       <Dependent Role="itinerario">
         <PropertyRef Name="iti_des_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_itinerario_usuario">
-    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
-    <End Role="itinerario" Type="Self.itinerario" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="usuario">
-        <PropertyRef Name="usu_id" />
-      </Principal>
-      <Dependent Role="itinerario">
-        <PropertyRef Name="iti_usu_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -157,7 +157,7 @@ advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ningu
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="mis_viajesModel1StoreContainer">
+  <EntityContainer Name="mis_viajesModelStoreContainer">
     <EntitySet Name="departamento" EntityType="Self.departamento" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="destino" EntityType="Self.destino" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="itinerario" EntityType="Self.itinerario" Schema="dbo" store:Type="Tables" />
@@ -186,11 +186,11 @@ advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ningu
       <End Role="destino" EntitySet="destino" />
     </AssociationSet>
     <AssociationSet Name="FK_itinerario_destino" Association="Self.FK_itinerario_destino">
-      <End Role="destino" EntitySet="destino" />
+      <End Role="usuario" EntitySet="usuario" />
       <End Role="itinerario" EntitySet="itinerario" />
     </AssociationSet>
-    <AssociationSet Name="FK_itinerario_usuario" Association="Self.FK_itinerario_usuario">
-      <End Role="usuario" EntitySet="usuario" />
+    <AssociationSet Name="FK_itinerario_destino1" Association="Self.FK_itinerario_destino1">
+      <End Role="destino" EntitySet="destino" />
       <End Role="itinerario" EntitySet="itinerario" />
     </AssociationSet>
     <AssociationSet Name="FK_localidad_departamento" Association="Self.FK_localidad_departamento">

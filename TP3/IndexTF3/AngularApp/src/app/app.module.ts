@@ -7,20 +7,28 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { IndexComponent } from './component/index/index.component';
 import { LogComponent } from './component/log/log.component';
 import { RegistroComponent } from './component/registro/registro.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { UsuarioService } from './services/usuario.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     IndexComponent,
     LogComponent,
-    RegistroComponent
+    RegistroComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UsuarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

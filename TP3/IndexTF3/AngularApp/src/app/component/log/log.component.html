@@ -1,37 +1,36 @@
 <header>
     <nav class="navbar">
         <div class="contenedorU2">
-            <a href="#">Inicio</a>
-            <a href="#news">Noticias</a>
+            <a routerLink='' routerLinkActive='Active'>Inicio</a>
+            <a routerLink=''>Noticias</a>
             <a href="#contact">Contacto</a>
-            <a href="#">Login</a>
-            <a href="#">Registro</a>
+            <a routerLink='login' routerLinkActive='Active'>Login</a>
+            <a routerLink='registro' routerLinkActive='Active'>Registro</a>
         </div>
     </nav>
     <div class="fotoLog">
+        <div>
+            <form class="login">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Ingrese su Nombre de Usuario o Email.</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <small id="emailHelp" class="form-text text-muted"></small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Contraseña</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Recordarme</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Entrar</button>
+            </form>
+        </div>
         <div class="container-texto2">
         </div>
     </div>
 </header>
-
-<div>
-    <form class="login">
-        <div class="form-group">
-            <label for="exampleInputEmail1">Ingrese su Nombre de Usuario o Email.</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <small id="emailHelp" class="form-text text-muted"></small>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Contraseña</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Recordarme</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Entrar</button>
-    </form>
-</div>
 
 <div class="footer-dark">
     <footer>

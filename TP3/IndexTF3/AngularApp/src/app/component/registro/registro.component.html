@@ -1,11 +1,11 @@
 <header>
     <nav class="navbar">
         <div class="contenedorU2">
-            <a href="#">Inicio</a>
-            <a href="#news">Noticias</a>
-            <a href="#contact">Contacto</a>
-            <a href="#">Login</a>
-            <a href="#">Registro</a>
+            <a routerLink='' routerLinkActive='Active'>Inicio</a>
+            <a routerLink=''>Noticias</a>
+            <a routerLink=''>Contacto</a>
+            <a routerLink='login' routerLinkActive='Active'>Login</a>
+            <a routerLink='registro' routerLinkActive='Active'>Registro</a>
         </div>
     </nav>
     <div class="fotoLog">
@@ -19,64 +19,73 @@
 </div>
 
 <div class="container">
-    <form class="needs-validation" novalidate>
-        <div class="form-row">
+    <form [formGroup]="form" (submit)="onSubmit" autocomplete="off">
+        <input type="hidden">
+        <div class="form-group">
             <div class="col-md-6 mb-3">
-                <label for="validationCustom01">Nombres</label>
-                <input type="text" class="form-control" id="validationCustom01" value="" required>
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
+                <label>Nombre de Usuario</label>
+                <input class="form-control" formControlName="usu_ali">
+                <span class="form-text text-danger">
+                    Dato necesario
+                </span>
             </div>
             <div class="col-md-6 mb-3">
-                <label for="validationCustom02">Apellido</label>
-                <input type="text" class="form-control" id="validationCustom02" value="" required>
-                <div class="valid-feedback">
-                    Looks good!
+                <label>Apellido</label>
+                <input class="form-control" formControlName="usu_ali">
+                <span class="form-text text-danger">
+                    Dato necesario
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-6 mb-3">
+                <label>Nombre de Usuario</label>
+                <input class="form-control" formControlName="usu_ali">
+                <span class="form-text text-danger">
+                    Dato necesario
+                </span>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="form-group1">
+                    <label>Numero de Telefono</label>
+                    <input class="form-control" formControlName="usu_ali">
+                    <span class="form-text text-danger">
+                        Dato necesario
+                    </span>
                 </div>
             </div>
         </div>
-        <div class="form-row">
-            <div class="col-md-6 mb-3">
-                <div class="form-group1">
-                    <label for="formGroupExampleInput">Nombre de Usuario</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
-                </div>
-            </div>
-            <div class="col-md-6 mb-3">
-                <div class="form-group1">
-                    <label for="formGroupExampleInput">Numero de Telefono</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
-                </div>
-            </div>
+        <div class="col-md-6 mb-3">
+            <label>Correo Electrónico</label>
+            <input class="form-control" formControlName="usu_ali">
+            <span class="form-text text-danger">
+                Dato necesario
+            </span>
         </div>
-        <div class="form-row">
-            <div class="col-md-6 mb-3">
-                <label for="validationCustom03">Correo Electrónico</label>
-                <input type="text" class="form-control" id="validationCustom03" required>
-                <div class="invalid-feedback">
-                </div>
-            </div>
-            <div class="col-md-6 mb-3">
-                <label for="validationCustom05">Correo Electrónico</label>
-                <input type="text" class="form-control" id="validationCustom05" required placeholder="Ingrese nuevamente el correo electrónico">
-                <div class="invalid-feedback">
-                </div>
-            </div>
+        <div class="col-md-6 mb-3">
+            <label>Correo Electrónico</label>
+            <input class="form-control" formControlName="usu_ali">
+            <span class="form-text text-danger">
+                Dato necesario
+            </span>
         </div>
-        <div class="form-row">
+        <div class="form-group">
             <div class="col-md-6 mb-3">
-                <div class="form-group1">
-                    <label for="formGroupExampleInput">Contraseña</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
-                </div>
+                <label>Contraseña</label>
+                <input class="form-control" formControlName="usu_ali">
+                <span class="form-text text-danger">
+                    Dato necesario
+                </span>
             </div>
             <div class="col-md-6 mb-3">
                 <div class="form-group1">
-                    <label for="formGroupExampleInput">Contraseña</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ingrese nuevamente la contraseña">
+                    <label>Contraseña</label>
+                    <input class="form-control" formControlName="usu_ali">
+                    <span class="form-text text-danger">
+                        Dato necesario
+                    </span>
                 </div>
-            </div>
+            </div>    
         </div>
         <div class="form-group">
             <div class="form-check">
@@ -91,7 +100,6 @@
         </div>
         <button class="btn btn-primary" type="submit">Enviar Registro</button>
     </form>
-
     <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
         (function () {

@@ -1,0 +1,45 @@
+body{
+    overflow: hidden;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 300;
+}
+
+h1{
+    color: #ff7171;
+}
+
+.bg-primary{
+    background-color: #f5c0c0 !important;
+}
+
+#sidebar-container{
+    min-height: 100vh;
+}
+
+#sidebar-container .logo{
+    padding: .875rem 1.25rem;
+}
+
+#sidebar-container .menu .d-block{
+    width: 18rem;
+    color: #000;
+}
+
+#sidebar-container .menu .d-block:hover{
+    background: #9fd8df;
+    text-decoration: none;
+}
+
+.btn-search{
+    right: 5px;
+}
+
+.avatar{
+    max-width: 35px;
+}
+
+#content{
+    overflow-y: auto;
+    height: 100vh;
+    padding-bottom: 5rem;
+}

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="mis_viajesModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="mis_viajesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="departamento">
     <Key>
       <PropertyRef Name="dep_id" />
@@ -25,7 +25,7 @@
     <Property Name="des_lat" Type="Geography" />
     <Property Name="des_lon" Type="Geography" />
     <NavigationProperty Name="localidad" Relationship="Self.FK_destino_localidad" FromRole="destino" ToRole="localidad" />
-    <NavigationProperty Name="itinerario" Relationship="Self.FK_itinerario_destino" FromRole="destino" ToRole="itinerario" />
+    <NavigationProperty Name="itinerario" Relationship="Self.FK_itinerario_destino1" FromRole="destino" ToRole="itinerario" />
   </EntityType>
   <EntityType Name="itinerario">
     <Key>
@@ -34,8 +34,8 @@
     <Property Name="iti_id" Type="Int32" Nullable="false" />
     <Property Name="iti_des_id" Type="Int32" Nullable="false" />
     <Property Name="iti_usu_id" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="destino" Relationship="Self.FK_itinerario_destino" FromRole="itinerario" ToRole="destino" />
-    <NavigationProperty Name="usuario" Relationship="Self.FK_itinerario_usuario" FromRole="itinerario" ToRole="usuario" />
+    <NavigationProperty Name="destino" Relationship="Self.FK_itinerario_destino1" FromRole="itinerario" ToRole="destino" />
+    <NavigationProperty Name="usuario" Relationship="Self.FK_itinerario_destino" FromRole="itinerario" ToRole="usuario" />
   </EntityType>
   <EntityType Name="localidad">
     <Key>
@@ -75,11 +75,11 @@
     </Key>
     <Property Name="usu_id" Type="Int32" Nullable="false" />
     <Property Name="usu_nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="usu_ape" Type="Binary" MaxLength="50" FixedLength="false" />
-    <Property Name="usu_cor" Type="Binary" MaxLength="50" FixedLength="false" />
+    <Property Name="usu_ape" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="usu_cor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="usu_cel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="usu_niv_id" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="itinerario" Relationship="Self.FK_itinerario_usuario" FromRole="usuario" ToRole="itinerario" />
+    <NavigationProperty Name="itinerario" Relationship="Self.FK_itinerario_destino" FromRole="usuario" ToRole="itinerario" />
     <NavigationProperty Name="chat" Relationship="Self.FK_chat_usuario" FromRole="usuario" ToRole="chat" />
   </EntityType>
   <EntityType Name="chat">
@@ -131,7 +131,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_itinerario_destino">
+  <Association Name="FK_itinerario_destino1">
     <End Role="destino" Type="Self.destino" Multiplicity="1" />
     <End Role="itinerario" Type="Self.itinerario" Multiplicity="*" />
     <ReferentialConstraint>
@@ -143,7 +143,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_itinerario_usuario">
+  <Association Name="FK_itinerario_destino">
     <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
     <End Role="itinerario" Type="Self.itinerario" Multiplicity="*" />
     <ReferentialConstraint>
@@ -151,7 +151,7 @@
         <PropertyRef Name="usu_id" />
       </Principal>
       <Dependent Role="itinerario">
-        <PropertyRef Name="iti_usu_id" />
+        <PropertyRef Name="iti_des_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -167,7 +167,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="mis_viajesEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="mis_viajesEntities2" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="departamento" EntityType="Self.departamento" />
     <EntitySet Name="destino" EntityType="Self.destino" />
     <EntitySet Name="itinerario" EntityType="Self.itinerario" />
@@ -188,11 +188,11 @@
       <End Role="localidad" EntitySet="localidad" />
       <End Role="destino" EntitySet="destino" />
     </AssociationSet>
-    <AssociationSet Name="FK_itinerario_destino" Association="Self.FK_itinerario_destino">
+    <AssociationSet Name="FK_itinerario_destino1" Association="Self.FK_itinerario_destino1">
       <End Role="destino" EntitySet="destino" />
       <End Role="itinerario" EntitySet="itinerario" />
     </AssociationSet>
-    <AssociationSet Name="FK_itinerario_usuario" Association="Self.FK_itinerario_usuario">
+    <AssociationSet Name="FK_itinerario_destino" Association="Self.FK_itinerario_destino">
       <End Role="usuario" EntitySet="usuario" />
       <End Role="itinerario" EntitySet="itinerario" />
     </AssociationSet>
