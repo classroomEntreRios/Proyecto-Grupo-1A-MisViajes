@@ -25,71 +25,77 @@
             <div class="col-md-6 mb-3">
                 <label>Nombre de Usuario</label>
                 <input class="form-control" formControlName="usu_ali">
-                <span class="form-text text-danger">
+                <span class="form-text text-danger"
+                *ngIf="form.controls['usu_ali'].invalid">
                     Dato necesario
                 </span>
             </div>
             <div class="col-md-6 mb-3">
-                <label>Apellido</label>
-                <input class="form-control" formControlName="usu_ali">
-                <span class="form-text text-danger">
+                <label>Nombre completo</label>
+                <input class="form-control" formControlName="usu_nom_com">
+                <span class="form-text text-danger"
+                *ngIf="form.controls['usu_nom_com'].invalid">
                     Dato necesario
                 </span>
             </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-6 mb-3">
-                <label>Nombre de Usuario</label>
-                <input class="form-control" formControlName="usu_ali">
-                <span class="form-text text-danger">
-                    Dato necesario
-                </span>
+            <div class="form-group">
+                <div class="col-md-6 mb-3">
+                    <div class="form-group1">
+                        <label>Numero de Telefono</label>
+                        <input class="form-control" formControlName="usu_cel">
+                        <span class="form-text text-danger"
+                        *ngIf="form.controls['usu_cel'].invalid">
+                            Dato necesario
+                        </span>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6 mb-3">
-                <div class="form-group1">
-                    <label>Numero de Telefono</label>
-                    <input class="form-control" formControlName="usu_ali">
-                    <span class="form-text text-danger">
+            <div class="form-group">
+                <div class="col-md-6 mb-3">
+                    <label>Correo Electrónico</label>
+                    <input class="form-control" formControlName="usu_cor">
+                    <span class="form-text text-danger"
+                    *ngIf="form.controls['usu_cor'].invalid">
                         Dato necesario
                     </span>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6 mb-3">
-            <label>Correo Electrónico</label>
-            <input class="form-control" formControlName="usu_ali">
-            <span class="form-text text-danger">
-                Dato necesario
-            </span>
-        </div>
-        <div class="col-md-6 mb-3">
-            <label>Correo Electrónico</label>
-            <input class="form-control" formControlName="usu_ali">
-            <span class="form-text text-danger">
-                Dato necesario
-            </span>
-        </div>
-        <div class="form-group">
-            <div class="col-md-6 mb-3">
-                <label>Contraseña</label>
-                <input class="form-control" formControlName="usu_ali">
-                <span class="form-text text-danger">
-                    Dato necesario
-                </span>
+            <div class="form-group">
+                <div class="col-md-6 mb-3">
+                    <label>Correo Electrónico</label>
+                    <input class="form-control" formControlName="usu_cor2">
+                    <span class="form-text text-danger"
+                    *ngIf="form.controls['usu_cor'].invalid">
+                        Dato necesario
+                    </span>
+                </div>
             </div>
-            <div class="col-md-6 mb-3">
-                <div class="form-group1">
+            <div class="form-group">
+                <div class="col-md-6 mb-3">
                     <label>Contraseña</label>
-                    <input class="form-control" formControlName="usu_ali">
-                    <span class="form-text text-danger">
+                    <input class="form-control" formControlName="usu_con">
+                    <span class="form-text text-danger"
+                    *ngIf="form.controls['usu_con'].invalid">
                         Dato necesario
                     </span>
                 </div>
-            </div>    
+            </div>
+            <div class="form-group">
+                <div class="col-md-6 mb-3">
+                    <div class="form-group1">
+                        <label>Contraseña</label>
+                        <input class="form-control" formControlName="usu_con2">
+                        <span class="form-text text-danger"
+                        *ngIf="form.controls['usu_con'].invalid">
+                            Dato necesario
+                        </span>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="form-group">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                <input class="form-check-input" type="checkbox" formControleName="termsLabel">
                 <label class="form-check-label" for="invalidCheck">
                     Acepto los términos y condiciones.
                 </label>
@@ -98,28 +104,11 @@
                 </div>
             </div>
         </div>
-        <button class="btn btn-primary" type="submit">Enviar Registro</button>
+        <div class="form-group">
+            <button class="btn btn-primary float-end"   
+                type="submit">Enviar Registro</button>
+        </div>
     </form>
-    <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (function () {
-            'use strict';
-            window.addEventListener('load', function () {
-                // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                var forms = document.getElementsByClassName('needs-validation');
-                // Loop over them and prevent submission
-                var validation = Array.prototype.filter.call(forms, function (form) {
-                    form.addEventListener('submit', function (event) {
-                        if (form.checkValidity() === false) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-                        form.classList.add('was-validated');
-                    }, false);
-                });
-            }, false);
-        })();
-    </script>
 </div>
 <div class="footer-dark">
     <footer>

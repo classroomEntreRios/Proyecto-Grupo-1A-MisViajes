@@ -78,11 +78,12 @@ advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ningu
     <Key>
       <PropertyRef Name="usu_id" />
     </Key>
-    <Property Name="usu_id" Type="int" Nullable="false" />
-    <Property Name="usu_nom" Type="varchar" MaxLength="50" />
-    <Property Name="usu_ape" Type="varchar" MaxLength="50" />
-    <Property Name="usu_cor" Type="varchar" MaxLength="50" />
-    <Property Name="usu_cel" Type="varchar" MaxLength="50" />
+    <Property Name="usu_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usu_ali" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="usu_nom_com" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="usu_con" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="usu_cor" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="usu_cel" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="usu_niv_id" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="FK_chat_usuario">
@@ -121,18 +122,6 @@ advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ningu
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_itinerario_destino">
-    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
-    <End Role="itinerario" Type="Self.itinerario" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="usuario">
-        <PropertyRef Name="usu_id" />
-      </Principal>
-      <Dependent Role="itinerario">
-        <PropertyRef Name="iti_des_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_itinerario_destino1">
     <End Role="destino" Type="Self.destino" Multiplicity="1" />
     <End Role="itinerario" Type="Self.itinerario" Multiplicity="*" />
@@ -142,6 +131,18 @@ advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ningu
       </Principal>
       <Dependent Role="itinerario">
         <PropertyRef Name="iti_des_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_itinerario_usuario">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+    <End Role="itinerario" Type="Self.itinerario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="usu_id" />
+      </Principal>
+      <Dependent Role="itinerario">
+        <PropertyRef Name="iti_usu_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -185,12 +186,12 @@ advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ningu
       <End Role="localidad" EntitySet="localidad" />
       <End Role="destino" EntitySet="destino" />
     </AssociationSet>
-    <AssociationSet Name="FK_itinerario_destino" Association="Self.FK_itinerario_destino">
-      <End Role="usuario" EntitySet="usuario" />
-      <End Role="itinerario" EntitySet="itinerario" />
-    </AssociationSet>
     <AssociationSet Name="FK_itinerario_destino1" Association="Self.FK_itinerario_destino1">
       <End Role="destino" EntitySet="destino" />
+      <End Role="itinerario" EntitySet="itinerario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_itinerario_usuario" Association="Self.FK_itinerario_usuario">
+      <End Role="usuario" EntitySet="usuario" />
       <End Role="itinerario" EntitySet="itinerario" />
     </AssociationSet>
     <AssociationSet Name="FK_localidad_departamento" Association="Self.FK_localidad_departamento">

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="mis_viajesModelStoreContainer" CdmEntityContainer="mis_viajesEntities2">
+  <EntityContainerMapping StorageEntityContainer="mis_viajesModelStoreContainer" CdmEntityContainer="mis_viajesEntities3">
     <EntitySetMapping Name="departamento">
       <EntityTypeMapping TypeName="mis_viajesModel.departamento">
         <MappingFragment StoreEntitySet="departamento">
@@ -71,8 +71,9 @@
       <EntityTypeMapping TypeName="mis_viajesModel.usuario">
         <MappingFragment StoreEntitySet="usuario">
           <ScalarProperty Name="usu_id" ColumnName="usu_id" />
-          <ScalarProperty Name="usu_nom" ColumnName="usu_nom" />
-          <ScalarProperty Name="usu_ape" ColumnName="usu_ape" />
+          <ScalarProperty Name="usu_ali" ColumnName="usu_ali" />
+          <ScalarProperty Name="usu_nom_com" ColumnName="usu_nom_com" />
+          <ScalarProperty Name="usu_con" ColumnName="usu_con" />
           <ScalarProperty Name="usu_cor" ColumnName="usu_cor" />
           <ScalarProperty Name="usu_cel" ColumnName="usu_cel" />
           <ScalarProperty Name="usu_niv_id" ColumnName="usu_niv_id" />

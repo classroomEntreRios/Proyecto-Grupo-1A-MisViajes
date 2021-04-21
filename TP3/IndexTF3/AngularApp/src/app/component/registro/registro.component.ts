@@ -10,24 +10,23 @@ import { from } from 'rxjs';
 })
 export class RegistroComponent implements OnInit {
 
-  form: FormGroup = this.formBuilder.group({
-    /*
-    usu_nom: [''],
-    usu_ape: [''],
-    usu_cor: [''],
-    usu_cel: [''],
-    */
-	  usu_ali: [''],
-  	usu_nom_com: [''],
-	  usu_con: [''],
-	  usu_cor: [''],
-	  su_cel: [''],
-
-  })
+  form: FormGroup;
 
   constructor(public service: UsuarioService, private formBuilder: FormBuilder){
-
+ 
+    this.form = formBuilder.group({
+      usu_ali: ['',[Validators.required, Validators.pattern('([a-zA-Z]+) ([a-zA-Z]+)')]],
+      usu_nom_com: ['',Validators.required],
+      usu_con: ['',[Validators.required, Validators.minLength(6)]],
+      usu_cor: ['',[Validators.required, Validators.email]],
+      su_cel: ['',Validators.required],
+  
+    })
   }
+  /*CampoValido(campo: string){
+    return this.controls[campo].console.errors;
+    
+  }*/
 
   ngOnInit(): void {
     this.resetForm();
@@ -48,7 +47,12 @@ export class RegistroComponent implements OnInit {
   }
 
   onSubmit(form: NgForm){
-    this.insertRecord(form);
+    if (this.form.invalid){
+      this.form.markAllAsTouched();
+    }
+    this.form.reset();
+   
+    
   }
 
   insertRecord(form: NgForm){
