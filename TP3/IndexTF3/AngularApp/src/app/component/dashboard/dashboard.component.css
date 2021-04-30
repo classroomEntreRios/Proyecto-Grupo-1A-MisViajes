@@ -43,3 +43,19 @@ h1{
     height: 100vh;
     padding-bottom: 5rem;
 }
+
+.container2{
+    margin: 10rem;
+}
+
+.card{
+    position: relative;
+    background: #f8f8f8;
+    
+
+}
+
+.p{
+    text-align: center;
+    text-shadow: darkgray;
+}

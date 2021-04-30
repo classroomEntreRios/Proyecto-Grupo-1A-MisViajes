@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { UsuarioService } from 'src/app/services/usuario.service';
-import { NgForm, FormBuilder, FormControl, Validators, FormGroup  } from '@angular/forms';
+import { AbstractControl, NgForm, FormBuilder, FormControl, Validators, FormGroup  } from '@angular/forms';
 import { from } from 'rxjs';
 
 @Component({
@@ -23,10 +23,11 @@ export class RegistroComponent implements OnInit {
   
     })
   }
-  /*CampoValido(campo: string){
-    return this.controls[campo].console.errors;
+  CampoValido(campo: string){
+    return this.form.controls[campo].errors &&
+          this.form.controls[campo].touched;
     
-  }*/
+  }
 
   ngOnInit(): void {
     this.resetForm();

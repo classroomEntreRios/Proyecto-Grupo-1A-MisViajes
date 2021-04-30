@@ -1,13 +1,4 @@
 <header>
-    <nav class="navbar">
-        <div class="contenedorU2">
-            <a routerLink='' routerLinkActive='Active'>Inicio</a>
-            <a routerLink=''>Noticias</a>
-            <a routerLink=''>Contacto</a>
-            <a routerLink='login' routerLinkActive='Active'>Login</a>
-            <a routerLink='registro' routerLinkActive='Active'>Registro</a>
-        </div>
-    </nav>
     <div class="fotoLog">
         <div class="container-texto2">
         </div>
@@ -26,7 +17,7 @@
                 <label>Nombre de Usuario</label>
                 <input class="form-control" formControlName="usu_ali">
                 <span class="form-text text-danger"
-                *ngIf="form.controls['usu_ali'].invalid">
+                *ngIf="CampoValido('usu_ali')">
                     Dato necesario
                 </span>
             </div>
@@ -34,7 +25,7 @@
                 <label>Nombre completo</label>
                 <input class="form-control" formControlName="usu_nom_com">
                 <span class="form-text text-danger"
-                *ngIf="form.controls['usu_nom_com'].invalid">
+                *ngIf="CampoValido('usu_nom_com')">
                     Dato necesario
                 </span>
             </div>

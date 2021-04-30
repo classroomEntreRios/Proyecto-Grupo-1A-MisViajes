@@ -2,11 +2,10 @@
     font-family: 'Heebo', sans-serif;
     background: #f8f8f8;
     width: 100%;
-    max-width: 1920px;
     margin: auto;
 }
 
-/*Navbar*/
+/*Navbar
 .navbar {
     background: #f5c0c0;
     position: sticky;

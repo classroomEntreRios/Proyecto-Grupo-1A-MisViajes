@@ -1,0 +1,30 @@
+/*Navbar*/
+.navbar {
+    background: #f5c0c0;
+    position: relative;
+    top: 0;
+}
+
+.navbar a {
+	color: #fff;
+    display: inline-block;
+	padding: 15px;
+	width: 100%;
+	text-align: center;
+	color: #000;
+	transition: .3s ease-out all;
+}
+
+.navbar a:hover {
+	background: #9fd8df;
+	color: #fff;
+	text-decoration: none;
+}
+
+.contenedorU {
+	max-width: 1000px;
+	width: 90%;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+}
