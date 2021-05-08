@@ -12,13 +12,14 @@ namespace IndexTF3.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class chat
+    public partial class Usuarios
     {
-        public int cha_id { get; set; }
-        public string cha_hor { get; set; }
-        public int cha_usu_id { get; set; }
-        public string cha_men { get; set; }
-    
-        public virtual usuario usuario { get; set; }
+        public int usu_id { get; set; }
+        public string usu_nom_com { get; set; }
+        public string usu_con { get; set; }
+        public string usu_cel { get; set; }
+        public string usu_cor { get; set; }
+        public string usu_ali { get; set; }
+        public Nullable<int> usu_niv_id { get; set; }
     }
 }

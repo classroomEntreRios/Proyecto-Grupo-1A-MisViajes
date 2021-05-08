@@ -14,19 +14,19 @@ namespace IndexTF3.Controllers
 {
     public class usuariosController : ApiController
     {
-        private mis_viajesEntities3 db = new mis_viajesEntities3();
+        private mis_viajesEntities db = new mis_viajesEntities();
 
         // GET: api/usuarios
-        public IQueryable<usuario> Getusuario()
+        public IQueryable<Usuarios> Getusuario()
         {
-            return db.usuario;
+            return db.Usuarios;
         }
 
         // GET: api/usuarios/5
-        [ResponseType(typeof(usuario))]
+        [ResponseType(typeof(Usuarios))]
         public IHttpActionResult Getusuario(int id)
         {
-            usuario usuario = db.usuario.Find(id);
+            Usuarios usuario = db.Usuarios.Find(id);
             if (usuario == null)
             {
                 return NotFound();
@@ -37,7 +37,7 @@ namespace IndexTF3.Controllers
 
         // PUT: api/usuarios/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult Putusuario(int id, usuario usuario)
+        public IHttpActionResult Putusuario(int id, Usuarios usuario)
         {
             if (!ModelState.IsValid)
             {
@@ -71,18 +71,19 @@ namespace IndexTF3.Controllers
         }
 
         // POST: api/usuarios
-        [ResponseType(typeof(usuario))]
-        public IHttpActionResult Postusuario(usuario usuario)
+        [ResponseType(typeof(Usuarios))]
+        public IHttpActionResult Postusuario(Usuarios usuario)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.usuario.Add(usuario);
+            db.Usuarios.Add(usuario);
 
             try
             {
+                
                 db.SaveChanges();
             }
             catch (DbUpdateException)
@@ -101,16 +102,16 @@ namespace IndexTF3.Controllers
         }
 
         // DELETE: api/usuarios/5
-        [ResponseType(typeof(usuario))]
+        [ResponseType(typeof(Usuarios))]
         public IHttpActionResult Deleteusuario(int id)
         {
-            usuario usuario = db.usuario.Find(id);
+            Usuarios usuario = db.Usuarios.Find(id);
             if (usuario == null)
             {
                 return NotFound();
             }
 
-            db.usuario.Remove(usuario);
+            db.Usuarios.Remove(usuario);
             db.SaveChanges();
 
             return Ok(usuario);
@@ -127,7 +128,7 @@ namespace IndexTF3.Controllers
 
         private bool usuarioExists(int id)
         {
-            return db.usuario.Count(e => e.usu_id == id) > 0;
+            return db.Usuarios.Count(e => e.usu_id == id) > 0;
         }
     }
 }

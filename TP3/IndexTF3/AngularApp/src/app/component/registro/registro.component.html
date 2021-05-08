@@ -9,99 +9,91 @@
     <h1>Registro de Usuario</h1>
 </div>
 
-<div class="container">
-    <form [formGroup]="form" (submit)="onSubmit" autocomplete="off">
-        <input type="hidden">
-        <div class="form-group">
-            <div class="col-md-6 mb-3">
-                <label>Nombre de Usuario</label>
-                <input class="form-control" formControlName="usu_ali">
-                <span class="form-text text-danger"
-                *ngIf="CampoValido('usu_ali')">
-                    Dato necesario
-                </span>
-            </div>
-            <div class="col-md-6 mb-3">
-                <label>Nombre completo</label>
-                <input class="form-control" formControlName="usu_nom_com">
-                <span class="form-text text-danger"
-                *ngIf="CampoValido('usu_nom_com')">
-                    Dato necesario
-                </span>
-            </div>
+    <div class="container">
+        <form [formGroup]="form" (ngSubmit)="enviar(form.value)" autocomplete="off">
             <div class="form-group">
-                <div class="col-md-6 mb-3">
+                <div class="col-md-5 mb-3">
+                    <label>Nombre de Usuario</label>
+                    <input class="form-control" type="text" formControlName="usu_ali">
+                    <span class="form-text text-danger" *ngIf="form.get('usu_ali').hasError('required')">
+                        Dato necesario
+                    </span>
+                </div>
+                <div class="col-md-5 mb-3">
+                    <label>Nombre completo</label>
+                    <input class="form-control" type="text" formControlName="usu_nom_com">
+                    <span class="form-text text-danger" *ngIf="form.get('usu_nom_com').hasError('required')">
+                        Dato necesario
+                    </span>
+                </div>
+
+                <div class="col-md-5 mb-3">
                     <div class="form-group1">
                         <label>Numero de Telefono</label>
-                        <input class="form-control" formControlName="usu_cel">
-                        <span class="form-text text-danger"
-                        *ngIf="form.controls['usu_cel'].invalid">
+                        <input class="form-control" type="text" formControlName="usu_cel">
+                        <span class="form-text text-danger" *ngIf="form.get('usu_cel').hasError('required')">
                             Dato necesario
                         </span>
                     </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-6 mb-3">
+
+
+                <div class="col-md-5 mb-3">
                     <label>Correo Electrónico</label>
-                    <input class="form-control" formControlName="usu_cor">
-                    <span class="form-text text-danger"
-                    *ngIf="form.controls['usu_cor'].invalid">
+                    <input class="form-control" type="text" formControlName="usu_cor">
+                    <span class="form-text text-danger" *ngIf="form.get('usu_cor').hasError('email')">
                         Dato necesario
                     </span>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-6 mb-3">
+
+
+                <div class="col-md-5 mb-3">
                     <label>Correo Electrónico</label>
-                    <input class="form-control" formControlName="usu_cor2">
-                    <span class="form-text text-danger"
-                    *ngIf="form.controls['usu_cor'].invalid">
+                    <input class="form-control" type="email" formControlName="usu_cor2">
+                    <span class="form-text text-danger" *ngIf="form.get('usu_cor').hasError('email')">
                         Dato necesario
                     </span>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-6 mb-3">
+
+
+                <div class="col-md-5 mb-3">
                     <label>Contraseña</label>
-                    <input class="form-control" formControlName="usu_con">
-                    <span class="form-text text-danger"
-                    *ngIf="form.controls['usu_con'].invalid">
-                        Dato necesario
+                    <input class="form-control" type="password" formControlName="usu_con">
+                    <span class="form-text text-danger" *ngIf="form.get('usu_con').hasError('required')">
+                    Dato necesario
                     </span>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-6 mb-3">
+
+
+                <div class="col-md-5 mb-3">
                     <div class="form-group1">
                         <label>Contraseña</label>
-                        <input class="form-control" formControlName="usu_con2">
-                        <span class="form-text text-danger"
-                        *ngIf="form.controls['usu_con'].invalid">
+                        <input class="form-control" type="password" formControlName="usu_con2">
+                        <span class="form-text text-danger" *ngIf="form.get('usu_con').hasError('required') ">
                             Dato necesario
                         </span>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="form-group">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" formControleName="termsLabel">
-                <label class="form-check-label" for="invalidCheck">
-                    Acepto los términos y condiciones.
-                </label>
-                <div class="invalid-feedback">
-                    Debe aceptar los terminos y condiciones para poder continuar.
+    
+    
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" formControleName="termsLabel">
+                    <label class="form-check-label" for="invalidCheck">
+                        Acepto los términos y condiciones.
+                    </label>
+                    <div class="invalid-feedback">
+                        Debe aceptar los terminos y condiciones para poder continuar.
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="form-group">
-            <button class="btn btn-primary float-end"   
-                type="submit">Enviar Registro</button>
-        </div>
-    </form>
-</div>
-<div class="footer-dark">
+            <div class="form-group">
+                <button [disabled]="form.invalid" class="btn btn-primary float-end" type="enviar">Enviar Registro</button>
+            </div>
+        </form>
+    </div>
+    <div class="footer-dark">
     <footer>
         <div class="container">
             <div class="row">

@@ -13,10 +13,10 @@ namespace IndexTF3.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class mis_viajesEntities3 : DbContext
+    public partial class mis_viajesEntities : DbContext
     {
-        public mis_viajesEntities3()
-            : base("name=mis_viajesEntities3")
+        public mis_viajesEntities()
+            : base("name=mis_viajesEntities")
         {
         }
     
@@ -25,13 +25,7 @@ namespace IndexTF3.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<departamento> departamento { get; set; }
-        public virtual DbSet<destino> destino { get; set; }
-        public virtual DbSet<itinerario> itinerario { get; set; }
-        public virtual DbSet<localidad> localidad { get; set; }
-        public virtual DbSet<provincia> provincia { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<usuario> usuario { get; set; }
-        public virtual DbSet<chat> chat { get; set; }
+        public virtual DbSet<Usuarios> Usuarios { get; set; }
     }
 }

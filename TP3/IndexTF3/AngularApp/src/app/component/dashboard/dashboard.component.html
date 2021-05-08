@@ -5,14 +5,13 @@
         <h4 class="text-dark font-weith-bold">Viajar</h4>
       </div>
       <div class="menu">
-        <a href="#ventana1" class="d-block p-3" data-toggle="modal"><i class="fas fa-user-friends"></i>
-          Usuario</a>
-        <a href="a" class="d-block p-3"><i class="far fa-id-card"></i> Editar</a>
-        <a href="a" class="d-block p-3"><i class="fab fa-forumbee"></i> Foro</a>
-        <a href="a" class="d-block p-3"><i class="fas fa-poll"></i> Estadisticas</a>
-        <a href="a" class="d-block p-3"><i class="fas fa-cloud-sun"></i> Clima</a>
-        <a href="a" class="d-block p-3"><i class="fas fa-cog"></i> Configuración</a>
-        <a href="a" class="d-block p-3"><i class="fas fa-sign-out-alt"></i> Salir</a>
+        <a routerLink='perfil' class="d-block p-3"><i class="fas fa-user-friends"></i>Usuario</a>
+        <a routerLink='' class="d-block p-3"><i class="far fa-id-card"></i> Editar</a>
+        <a routerLink='' class="d-block p-3"><i class="fab fa-forumbee"></i> Foro</a>
+        <a routerLink='' class="d-block p-3"><i class="fas fa-poll"></i> Estadisticas</a>
+        <a routerLink='' class="d-block p-3"><i class="fas fa-cloud-sun"></i> Clima</a>
+        <a routerLink='' class="d-block p-3"><i class="fas fa-cog"></i> Configuración</a>
+        <a routerLink='/' class="d-block p-3"><i class="fas fa-sign-out-alt"></i> Salir</a>
       </div>
     </div>
     <div class="w-100">
@@ -72,60 +71,41 @@
           $('#myInput').trigger('focus')
         })
       </script>
-      <!--    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <form class="form-inline position-relative my-2 d-inline-block">
-                        <input class="form-control mr-2" type="search" placeholder="Buscar" aria-label="Buscar">
-                        <button class="btn btn-search position-absolute" type="submit"><i
-                                class="fas fa-search"></i></button>
-                    </form>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src="assets/ping.png" class="img-fluid rounded-circle avatar mr-2">
-                                  Juan P Caffa
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="#">Mi perfil</a>
-                                  <a class="dropdown-item" href="#">Posteos</a>
-                                  <div class="dropdown-divider"></div>
-                                  <a class="dropdown-item" href="#">Cerrar Sesión</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>-->
-      <div id="content">
-        <section>
+      <div class="container">
+        <router-outlet></router-outlet>
+      </div>
+
+      <div class="footer-dark">
+        <footer>
           <div class="container">
             <div class="row">
-              <div class="col-lg-9">
-                <h1 class="font-weigth-bold mb-0">Bienvenido...</h1>
-                <p class="lead text-muted">En esta sección podras realizar consultas y modificaciones con respecto a la
-                  administración de la página como del foro.</p>
+              <div class="col-sm-6 col-md-3 item">
+                <h3>Servicios</h3>
+                <ul>
+                  <li><a href="#">Web design</a></li>
+                  <li><a href="#">Development</a></li>
+                  <li><a href="#">Hosting</a></li>
+                </ul>
               </div>
-            </div>
-          </div>
-        </section>
-        <div class="container2">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="card bg-light">
-                <div class="btn card-body text-center">
-                  <p class="card-text">Ingresar a Foro</p>
-                </div>
+              <div class="col-sm-6 col-md-3 item">
+                <h3>Acerca de</h3>
+                <ul>
+                  <li><a href="#">Compañia</a></li>
+                  <li><a href="#">Equipo</a></li>
+                  <li><a href="#">Carrera</a></li>
+                </ul>
               </div>
+              <div class="col-md-6 item text">
+                <h3>Grupo 1.A Desarrollador FullStack - Entre Ríos</h3>
+                <p>Equipo integrado por 4 estudiantes de programación FullStack.</p>
+              </div>
+              <div class="col item social"><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i
+                    class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i
+                    class="fab fa-instagram"></i></a></div>
             </div>
+            <p class="copyright">Grupo 1.A © 2020 - Entre Ríos</p>
           </div>
-        </div>
+        </footer>
       </div>
     </div>
   </div>

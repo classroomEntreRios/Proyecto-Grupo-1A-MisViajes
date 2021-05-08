@@ -1,69 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="mis_viajesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
-  <EntityType Name="chat">
-    <Key>
-      <PropertyRef Name="cha_id" />
-      <PropertyRef Name="cha_hor" />
-      <PropertyRef Name="cha_usu_id" />
-      <PropertyRef Name="cha_men" />
-    </Key>
-    <Property Name="cha_id" Type="int" Nullable="false" />
-    <Property Name="cha_hor" Type="nchar" MaxLength="10" Nullable="false" />
-    <Property Name="cha_usu_id" Type="int" Nullable="false" />
-    <Property Name="cha_men" Type="nchar" MaxLength="10" Nullable="false" />
-  </EntityType>
-  <EntityType Name="departamento">
-    <Key>
-      <PropertyRef Name="dep_id" />
-    </Key>
-    <Property Name="dep_id" Type="int" Nullable="false" />
-    <Property Name="dep_nom" Type="varchar" MaxLength="50" />
-    <Property Name="dep_lat" Type="geography" />
-    <Property Name="dep_lon" Type="geography" />
-    <Property Name="dep_pro_id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="destino">
-    <Key>
-      <PropertyRef Name="des_id" />
-    </Key>
-    <Property Name="des_id" Type="int" Nullable="false" />
-    <Property Name="des_nom" Type="varchar" MaxLength="50" />
-    <Property Name="des_loc_id" Type="int" Nullable="false" />
-    <Property Name="des_cat_id" Type="int" Nullable="false" />
-    <Property Name="des_tem_id" Type="int" Nullable="false" />
-    <Property Name="des_des" Type="text" />
-    <Property Name="des_lat" Type="geography" />
-    <Property Name="des_lon" Type="geography" />
-  </EntityType>
-  <EntityType Name="itinerario">
-    <Key>
-      <PropertyRef Name="iti_id" />
-    </Key>
-    <Property Name="iti_id" Type="int" Nullable="false" />
-    <Property Name="iti_des_id" Type="int" Nullable="false" />
-    <Property Name="iti_usu_id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="localidad">
-    <Key>
-      <PropertyRef Name="loc_id" />
-    </Key>
-    <Property Name="loc_id" Type="int" Nullable="false" />
-    <Property Name="loc_nom" Type="varchar" MaxLength="50" />
-    <Property Name="loc_dep_id" Type="int" Nullable="false" />
-    <Property Name="loc_hab" Type="int" />
-    <Property Name="loc_lat" Type="geography" />
-    <Property Name="loc_long" Type="geography" />
-  </EntityType>
-  <EntityType Name="provincia">
-    <Key>
-      <PropertyRef Name="pro_id" />
-    </Key>
-    <Property Name="pro_id" Type="int" Nullable="false" />
-    <Property Name="pro_nom" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="pro_reg" Type="varchar" MaxLength="50" />
-  </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -74,129 +10,20 @@ advertencia 6002: La tabla o vista 'mis_viajes.dbo.chat' no tiene definida ningu
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
-  <EntityType Name="usuario">
+  <EntityType Name="Usuarios">
     <Key>
       <PropertyRef Name="usu_id" />
     </Key>
     <Property Name="usu_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="usu_ali" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="usu_nom_com" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="usu_con" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="usu_cor" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="usu_cel" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="usu_niv_id" Type="int" Nullable="false" />
+    <Property Name="usu_cor" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="usu_ali" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="usu_niv_id" Type="int" />
   </EntityType>
-  <Association Name="FK_chat_usuario">
-    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
-    <End Role="chat" Type="Self.chat" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="usuario">
-        <PropertyRef Name="usu_id" />
-      </Principal>
-      <Dependent Role="chat">
-        <PropertyRef Name="cha_usu_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_departamento_provincia">
-    <End Role="provincia" Type="Self.provincia" Multiplicity="1" />
-    <End Role="departamento" Type="Self.departamento" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="provincia">
-        <PropertyRef Name="pro_id" />
-      </Principal>
-      <Dependent Role="departamento">
-        <PropertyRef Name="dep_pro_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_destino_localidad">
-    <End Role="localidad" Type="Self.localidad" Multiplicity="1" />
-    <End Role="destino" Type="Self.destino" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="localidad">
-        <PropertyRef Name="loc_id" />
-      </Principal>
-      <Dependent Role="destino">
-        <PropertyRef Name="des_loc_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_itinerario_destino1">
-    <End Role="destino" Type="Self.destino" Multiplicity="1" />
-    <End Role="itinerario" Type="Self.itinerario" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="destino">
-        <PropertyRef Name="des_id" />
-      </Principal>
-      <Dependent Role="itinerario">
-        <PropertyRef Name="iti_des_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_itinerario_usuario">
-    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
-    <End Role="itinerario" Type="Self.itinerario" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="usuario">
-        <PropertyRef Name="usu_id" />
-      </Principal>
-      <Dependent Role="itinerario">
-        <PropertyRef Name="iti_usu_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_localidad_departamento">
-    <End Role="departamento" Type="Self.departamento" Multiplicity="1" />
-    <End Role="localidad" Type="Self.localidad" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="departamento">
-        <PropertyRef Name="dep_id" />
-      </Principal>
-      <Dependent Role="localidad">
-        <PropertyRef Name="loc_dep_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="mis_viajesModelStoreContainer">
-    <EntitySet Name="departamento" EntityType="Self.departamento" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="destino" EntityType="Self.destino" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="itinerario" EntityType="Self.itinerario" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="localidad" EntityType="Self.localidad" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="provincia" EntityType="Self.provincia" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="chat" EntityType="Self.chat" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [chat].[cha_id] AS [cha_id], 
-    [chat].[cha_hor] AS [cha_hor], 
-    [chat].[cha_usu_id] AS [cha_usu_id], 
-    [chat].[cha_men] AS [cha_men]
-    FROM [dbo].[chat] AS [chat]</DefiningQuery>
-    </EntitySet>
-    <AssociationSet Name="FK_chat_usuario" Association="Self.FK_chat_usuario">
-      <End Role="usuario" EntitySet="usuario" />
-      <End Role="chat" EntitySet="chat" />
-    </AssociationSet>
-    <AssociationSet Name="FK_departamento_provincia" Association="Self.FK_departamento_provincia">
-      <End Role="provincia" EntitySet="provincia" />
-      <End Role="departamento" EntitySet="departamento" />
-    </AssociationSet>
-    <AssociationSet Name="FK_destino_localidad" Association="Self.FK_destino_localidad">
-      <End Role="localidad" EntitySet="localidad" />
-      <End Role="destino" EntitySet="destino" />
-    </AssociationSet>
-    <AssociationSet Name="FK_itinerario_destino1" Association="Self.FK_itinerario_destino1">
-      <End Role="destino" EntitySet="destino" />
-      <End Role="itinerario" EntitySet="itinerario" />
-    </AssociationSet>
-    <AssociationSet Name="FK_itinerario_usuario" Association="Self.FK_itinerario_usuario">
-      <End Role="usuario" EntitySet="usuario" />
-      <End Role="itinerario" EntitySet="itinerario" />
-    </AssociationSet>
-    <AssociationSet Name="FK_localidad_departamento" Association="Self.FK_localidad_departamento">
-      <End Role="departamento" EntitySet="departamento" />
-      <End Role="localidad" EntitySet="localidad" />
-    </AssociationSet>
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

@@ -1,6 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { AbstractControl, NgForm, FormBuilder, FormControl, Validators, FormGroup  } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { from } from 'rxjs';
 
 @Component({
@@ -8,30 +9,41 @@ import { from } from 'rxjs';
   templateUrl: './registro.component.html',
   styleUrls: ['./registro.component.css']
 })
-export class RegistroComponent implements OnInit {
+export class RegistroComponent{
 
-  form: FormGroup;
 
-  constructor(public service: UsuarioService, private formBuilder: FormBuilder){
- 
-    this.form = formBuilder.group({
-      usu_ali: ['',[Validators.required, Validators.pattern('([a-zA-Z]+) ([a-zA-Z]+)')]],
+  form: FormGroup
+
+
+  constructor(public service: UsuarioService,
+    private formBuilder: FormBuilder
+  ){
+    this.form = this.formBuilder.group({
+
+      usu_ali: ['', Validators.required],
       usu_nom_com: ['',Validators.required],
-      usu_con: ['',[Validators.required, Validators.minLength(6)]],
-      usu_cor: ['',[Validators.required, Validators.email]],
-      su_cel: ['',Validators.required],
-  
+      usu_con: ['',Validators.compose([Validators.required, Validators.minLength(6)])],
+      usu_cor: ['',Validators.compose([Validators.required, Validators.email])],
+      usu_con2: ['',Validators.compose([Validators.required, Validators.minLength(6)])],
+      usu_cor2: ['',Validators.compose([Validators.required, Validators.email])],
+      usu_cel: ['',Validators.required],
+     
+      
+
+
     })
   }
-  CampoValido(campo: string){
-    return this.form.controls[campo].errors &&
-          this.form.controls[campo].touched;
+
+  enviar(form: NgForm){
+    if (this.form.invalid){
+      this.form.markAllAsTouched();
+      this.resetForm(form);
+    }
+    this.insertRecord(form);
     
+ 
   }
 
-  ngOnInit(): void {
-    this.resetForm();
-  }
 
   resetForm(form?: NgForm){
     if(form != null)
@@ -47,18 +59,10 @@ export class RegistroComponent implements OnInit {
     }
   }
 
-  onSubmit(form: NgForm){
-    if (this.form.invalid){
-      this.form.markAllAsTouched();
-    }
-    this.form.reset();
-   
-    
-  }
-
   insertRecord(form: NgForm){
     this.service.postUsuario(form.value).subscribe(res => {
       this.resetForm(form);
     })
   }
-}
+
+} 

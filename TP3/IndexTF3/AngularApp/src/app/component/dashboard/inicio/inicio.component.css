@@ -1,0 +1,12 @@
+#content{
+    overflow-y: auto;
+    height: 100vh;
+    padding-bottom: 5rem;
+}
+.p{
+    text-align: center;
+    text-shadow: darkgray;
+}
+h1{
+    color: #ff7171;
+}

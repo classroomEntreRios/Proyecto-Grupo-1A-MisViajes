@@ -1,61 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="mis_viajesModelStoreContainer" CdmEntityContainer="mis_viajesEntities3">
-    <EntitySetMapping Name="departamento">
-      <EntityTypeMapping TypeName="mis_viajesModel.departamento">
-        <MappingFragment StoreEntitySet="departamento">
-          <ScalarProperty Name="dep_id" ColumnName="dep_id" />
-          <ScalarProperty Name="dep_nom" ColumnName="dep_nom" />
-          <ScalarProperty Name="dep_lat" ColumnName="dep_lat" />
-          <ScalarProperty Name="dep_lon" ColumnName="dep_lon" />
-          <ScalarProperty Name="dep_pro_id" ColumnName="dep_pro_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="destino">
-      <EntityTypeMapping TypeName="mis_viajesModel.destino">
-        <MappingFragment StoreEntitySet="destino">
-          <ScalarProperty Name="des_id" ColumnName="des_id" />
-          <ScalarProperty Name="des_nom" ColumnName="des_nom" />
-          <ScalarProperty Name="des_loc_id" ColumnName="des_loc_id" />
-          <ScalarProperty Name="des_cat_id" ColumnName="des_cat_id" />
-          <ScalarProperty Name="des_tem_id" ColumnName="des_tem_id" />
-          <ScalarProperty Name="des_des" ColumnName="des_des" />
-          <ScalarProperty Name="des_lat" ColumnName="des_lat" />
-          <ScalarProperty Name="des_lon" ColumnName="des_lon" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="itinerario">
-      <EntityTypeMapping TypeName="mis_viajesModel.itinerario">
-        <MappingFragment StoreEntitySet="itinerario">
-          <ScalarProperty Name="iti_id" ColumnName="iti_id" />
-          <ScalarProperty Name="iti_des_id" ColumnName="iti_des_id" />
-          <ScalarProperty Name="iti_usu_id" ColumnName="iti_usu_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="localidad">
-      <EntityTypeMapping TypeName="mis_viajesModel.localidad">
-        <MappingFragment StoreEntitySet="localidad">
-          <ScalarProperty Name="loc_id" ColumnName="loc_id" />
-          <ScalarProperty Name="loc_nom" ColumnName="loc_nom" />
-          <ScalarProperty Name="loc_dep_id" ColumnName="loc_dep_id" />
-          <ScalarProperty Name="loc_hab" ColumnName="loc_hab" />
-          <ScalarProperty Name="loc_lat" ColumnName="loc_lat" />
-          <ScalarProperty Name="loc_long" ColumnName="loc_long" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="provincia">
-      <EntityTypeMapping TypeName="mis_viajesModel.provincia">
-        <MappingFragment StoreEntitySet="provincia">
-          <ScalarProperty Name="pro_id" ColumnName="pro_id" />
-          <ScalarProperty Name="pro_nom" ColumnName="pro_nom" />
-          <ScalarProperty Name="pro_reg" ColumnName="pro_reg" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
+  <EntityContainerMapping StorageEntityContainer="mis_viajesModelStoreContainer" CdmEntityContainer="mis_viajesEntities">
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="mis_viajesModel.sysdiagrams">
         <MappingFragment StoreEntitySet="sysdiagrams">
@@ -67,26 +12,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="usuario">
-      <EntityTypeMapping TypeName="mis_viajesModel.usuario">
-        <MappingFragment StoreEntitySet="usuario">
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="mis_viajesModel.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
           <ScalarProperty Name="usu_id" ColumnName="usu_id" />
-          <ScalarProperty Name="usu_ali" ColumnName="usu_ali" />
           <ScalarProperty Name="usu_nom_com" ColumnName="usu_nom_com" />
           <ScalarProperty Name="usu_con" ColumnName="usu_con" />
-          <ScalarProperty Name="usu_cor" ColumnName="usu_cor" />
           <ScalarProperty Name="usu_cel" ColumnName="usu_cel" />
+          <ScalarProperty Name="usu_cor" ColumnName="usu_cor" />
+          <ScalarProperty Name="usu_ali" ColumnName="usu_ali" />
           <ScalarProperty Name="usu_niv_id" ColumnName="usu_niv_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="chat">
-      <EntityTypeMapping TypeName="mis_viajesModel.chat">
-        <MappingFragment StoreEntitySet="chat">
-          <ScalarProperty Name="cha_id" ColumnName="cha_id" />
-          <ScalarProperty Name="cha_hor" ColumnName="cha_hor" />
-          <ScalarProperty Name="cha_usu_id" ColumnName="cha_usu_id" />
-          <ScalarProperty Name="cha_men" ColumnName="cha_men" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -12,6 +11,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UsuarioService } from './services/usuario.service';
 import { NavbarComponent } from './component/navbar/navbar.component';
+import { ProfileComponent } from './component/dashboard/profile/profile.component';
+import { InicioComponent } from './component/dashboard/inicio/inicio.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,8 @@ import { NavbarComponent } from './component/navbar/navbar.component';
     RegistroComponent,
     DashboardComponent,
     NavbarComponent,
+    ProfileComponent,
+    InicioComponent,
   ],
   imports: [
     BrowserModule,
