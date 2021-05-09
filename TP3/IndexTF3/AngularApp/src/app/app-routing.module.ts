@@ -6,6 +6,7 @@ import { ProfileComponent } from './component/dashboard/profile/profile.componen
 import { IndexComponent } from './component/index/index.component';
 import { LogComponent } from './component/log/log.component';
 import { RegistroComponent } from './component/registro/registro.component';
+import { AuthService } from './services/auth.service';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ component:IndexComponent,
 
   {path: 'dashboard',
   component: DashboardComponent,
+  canActivate: [AuthService],
   children: [
     {path:  '',
     component: InicioComponent,

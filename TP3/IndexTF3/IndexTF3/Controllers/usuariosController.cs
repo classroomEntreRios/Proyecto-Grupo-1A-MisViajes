@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using IndexTF3.Models;
+using IndexTF3.Models.WS;
 
 namespace IndexTF3.Controllers
 {
@@ -129,6 +130,29 @@ namespace IndexTF3.Controllers
         private bool usuarioExists(int id)
         {
             return db.Usuarios.Count(e => e.usu_id == id) > 0;
+        }
+
+        //api/usuaruio/login
+        [HttpPost]
+        public Loggin Login(string email, string password)
+        {
+            Loggin oRespuesta = new Loggin();
+            using (mis_viajesEntities db = new mis_viajesEntities())
+            {
+                var lista = db.Usuarios.Where(a => a.usu_cor == email && a.usu_con == password).ToList();
+                if (lista.Count() > 0)
+                {
+                    oRespuesta.Resultado = 1;
+                    oRespuesta.Mensaje = "Login correcto";
+                }
+                else
+                {
+                    oRespuesta.Resultado = 0;
+                    oRespuesta.Mensaje = "Login incorrecto";
+                }
+            }
+
+            return oRespuesta;
         }
     }
 }

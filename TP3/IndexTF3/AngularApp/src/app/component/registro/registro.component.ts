@@ -9,45 +9,47 @@ import { from } from 'rxjs';
   templateUrl: './registro.component.html',
   styleUrls: ['./registro.component.css']
 })
-export class RegistroComponent{
+export class RegistroComponent implements OnInit{
 
 
-  form: FormGroup
+  form: FormGroup = this.formBuilder.group({
+
+    usu_ali: ['', Validators.required],
+    usu_nom_com: ['',Validators.required],
+    usu_con: ['',Validators.compose([Validators.required, Validators.minLength(6)])],
+    usu_cor: ['',Validators.compose([Validators.required, Validators.email])],
+    usu_con2: ['',Validators.compose([Validators.required, Validators.minLength(6)])],
+    usu_cor2: ['',Validators.compose([Validators.required, Validators.email])],
+    usu_cel: ['',Validators.required],
+   
+  })
 
 
   constructor(public service: UsuarioService,
-    private formBuilder: FormBuilder
-  ){
-    this.form = this.formBuilder.group({
-
-      usu_ali: ['', Validators.required],
-      usu_nom_com: ['',Validators.required],
-      usu_con: ['',Validators.compose([Validators.required, Validators.minLength(6)])],
-      usu_cor: ['',Validators.compose([Validators.required, Validators.email])],
-      usu_con2: ['',Validators.compose([Validators.required, Validators.minLength(6)])],
-      usu_cor2: ['',Validators.compose([Validators.required, Validators.email])],
-      usu_cel: ['',Validators.required],
-     
-      
-
-
-    })
+    private formBuilder: FormBuilder){
+  }
+  ngOnInit(): void {
+    this.resetForm();
   }
 
-  enviar(form: NgForm){
+  ValidForm(campo : string){
+    return this.form.controls[campo].errors&&
+           this.form.controls[campo].touched; 
+  }
+
+  onSubmit(form: FormGroup){
     if (this.form.invalid){
       this.form.markAllAsTouched();
       this.resetForm(form);
     }
-    this.insertRecord(form);
-    
+    this.insertRecord(form); 
  
   }
 
 
-  resetForm(form?: NgForm){
+  resetForm(form?: FormGroup){
     if(form != null)
-    form.resetForm();
+    form.reset();
     this.service.formData = {
       usu_id: null,
       usu_nom_com: "",
@@ -59,10 +61,11 @@ export class RegistroComponent{
     }
   }
 
-  insertRecord(form: NgForm){
-    this.service.postUsuario(form.value).subscribe(res => {
+  insertRecord(form: FormGroup){
+    console.log(form.value);
+    this.service.postUsuario(form.value).subscribe(res =>{
       this.resetForm(form);
-    })
+    } );
   }
 
 } 

@@ -1,0 +1,16 @@
+.container-us{
+    padding-top: 3rem;
+}
+
+#imagen{
+    border-radius: 70%;
+    min-height: 15%;
+    min-width: 10%;
+
+}
+
+.p{
+    text-align: center;
+    padding-top: 3rem;
+    margin: 2px;
+}
