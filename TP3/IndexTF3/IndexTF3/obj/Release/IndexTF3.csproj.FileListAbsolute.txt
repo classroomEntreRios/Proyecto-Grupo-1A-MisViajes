@@ -97,3 +97,7 @@ D:\Proyecto Final\Proyecto-Grupo-1A-MisViajes\TP3\IndexTF3\IndexTF3\obj\Release\
 D:\Proyecto Final\Proyecto-Grupo-1A-MisViajes\TP3\IndexTF3\IndexTF3\obj\Release\IndexTF3.csproj.CopyComplete
 D:\Proyecto Final\Proyecto-Grupo-1A-MisViajes\TP3\IndexTF3\IndexTF3\obj\Release\IndexTF3.dll
 D:\Proyecto Final\Proyecto-Grupo-1A-MisViajes\TP3\IndexTF3\IndexTF3\obj\Release\IndexTF3.pdb
+D:\Proyecto Final\Proyecto-Grupo-1A-MisViajes\TP3\IndexTF3\IndexTF3\bin\Microsoft.Configuration.ConfigurationBuilders.Base.dll
+D:\Proyecto Final\Proyecto-Grupo-1A-MisViajes\TP3\IndexTF3\IndexTF3\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.dll
+D:\Proyecto Final\Proyecto-Grupo-1A-MisViajes\TP3\IndexTF3\IndexTF3\bin\Microsoft.Configuration.ConfigurationBuilders.Base.xml
+D:\Proyecto Final\Proyecto-Grupo-1A-MisViajes\TP3\IndexTF3\IndexTF3\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.xml

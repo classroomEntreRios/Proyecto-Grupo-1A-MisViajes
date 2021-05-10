@@ -36,20 +36,20 @@ export class LogComponent implements OnInit {
       this.form.markAllAsTouched();
       this.resetForm(form);
     }
-    this.insertRecord(form);
+    //this.insertRecord(form);
     
-    /*this.service.login(this.form.value).subscribe(
+    this.service.login(this.form.value).subscribe(
       (res) => {
-        //this.authService.setAuth('juanp.caffa@gmail.com');
-        this.authService.setAuth(this.form.value.usu_cor);
+        this.authService.setAuth('juanp.caffa@gmail.com');
+        //this.authService.setAuth(this.form.value.usu_cor);
         this.router.navigate(['dashboard']);
       },
       (err) => {
         this.authService.setAuth(this.form.value.usu_cor);
-        //this.router.navigate(['']);
+        this.router.navigate(['']);
         alert('Error al iniciar sesión')
       }
-    );*/
+    );
   }
 
    

@@ -18,19 +18,19 @@
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Recordarme</label>
         </div>
-        <button id="btn-1" type="submit" class="btn btn-primary">Entrar</button>
+        <button id="btn1" type="submit" class="btn btn-primary">Entrar</button>
     </form>
     <div class="container-texto2">
     </div>
 </div>
 
 <script>
-    document.getElementById("crearCookie").addEventListener("click", crearCookie);
-    
-    function crearCookie(){
-      document.cookie = "nombre = " + form.value.usu_cor;
-      var miCookie = document.cookie;
-      alert(miCookie);
+    document.getElementById("btn1").addEventListener("click", crearCookie);
+
+    function crearCookie(e) {
+        document.cookie = "nombre = " + e.value.usu_cor;
+        var miCookie = document.cookie;
+        alert(miCookie);
     }
 </script>
 
@@ -61,12 +61,12 @@
                     <h3>Grupo 1.A Desarrollador FullStack - Entre Ríos</h3>
                     <p>Equipo integrado por 4 estudiantes de programación FullStack.</p>
                 </div>
-                <div class="col item social"><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i
+                <div class="col item social"><a href="https://www.facebook.com/Juanpii.Caffa/"><i
+                            class="fab fa-facebook"></i></a><a href="https://twitter.com/JuanPyAkd"><i
                             class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a
-                        href="#"><i class="fab fa-instagram"></i></a></div>
+                        href="https://www.instagram.com/juanpiicaffa/"><i class="fab fa-instagram"></i></a></div>
             </div>
             <p class="copyright">Grupo 1.A © 2020 - Entre Ríos</p>
         </div>
     </footer>
-
-   
+</div>

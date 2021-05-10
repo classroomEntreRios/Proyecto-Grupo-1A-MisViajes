@@ -15,12 +15,13 @@
       <PropertyRef Name="usu_id" />
     </Key>
     <Property Name="usu_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="usu_nom_com" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="usu_con" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="usu_cel" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="usu_nom_com" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="usu_cor" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="usu_ali" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="usu_cel" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="usu_niv_id" Type="int" />
+    <Property Name="Token" Type="varchar" MaxLength="50" />
+    <Property Name="usu_ali" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityContainer Name="mis_viajesModelStoreContainer">
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />

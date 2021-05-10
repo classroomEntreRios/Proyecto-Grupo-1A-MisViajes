@@ -64,9 +64,8 @@
 .titulo2{
     background: #f0e4d7;
     color: #333;
-    width: 25%;
-    height: 20%;
-    min-width: 250px;
+    width: 90%;
+    max-height: 40%;
     margin: auto;
     text-align: center;
     line-height: 100px;

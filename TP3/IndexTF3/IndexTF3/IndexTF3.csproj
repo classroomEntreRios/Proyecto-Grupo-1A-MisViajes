@@ -52,6 +52,12 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Configuration.ConfigurationBuilders.Base, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Configuration.ConfigurationBuilders.Base.2.0.0\lib\Net471\Microsoft.Configuration.ConfigurationBuilders.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Configuration.ConfigurationBuilders.UserSecrets, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.2.0.0\lib\Net471\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -180,6 +186,32 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\IndexTF3.dll" />
+    <Content Include="bin\IndexTF3.pdb" />
+    <Content Include="Bundles\assets\Comollego.jpg" />
+    <Content Include="Bundles\assets\Concepcion.jpg" />
+    <Content Include="Bundles\assets\dondecomer.jpg" />
+    <Content Include="Bundles\assets\logo.clima.png" />
+    <Content Include="Bundles\assets\logo1.jpg" />
+    <Content Include="Bundles\assets\mapa.jpg" />
+    <Content Include="Bundles\assets\Palacio.jpg" />
+    <Content Include="Bundles\assets\Palacio1.jpg" />
+    <Content Include="Bundles\assets\Palacio2.jpg" />
+    <Content Include="Bundles\assets\Palmar.jpg" />
+    <Content Include="Bundles\assets\parana.png" />
+    <Content Include="Bundles\assets\ping.png" />
+    <Content Include="Bundles\assets\Playas.jpg" />
+    <Content Include="Bundles\assets\Playas1.png" />
+    <Content Include="Bundles\assets\playas2.jpg" />
+    <Content Include="Bundles\assets\playas3.jpg" />
+    <Content Include="Bundles\assets\Transporte.jpg" />
+    <Content Include="Bundles\favicon.ico" />
+    <Content Include="Bundles\index.html" />
+    <Content Include="Bundles\main.js" />
+    <Content Include="Bundles\polyfills.js" />
+    <Content Include="Bundles\runtime.js" />
+    <Content Include="Bundles\styles.css" />
+    <Content Include="Bundles\vendor.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -207,6 +239,11 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="Bundles\main.js.map" />
+    <Content Include="Bundles\polyfills.js.map" />
+    <Content Include="Bundles\runtime.js.map" />
+    <Content Include="Bundles\styles.css.map" />
+    <Content Include="Bundles\vendor.js.map" />
     <None Include="Properties\PublishProfiles\testg1cfs - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
