@@ -24,6 +24,7 @@ export class AuthService implements CanActivate {
   }
 
   public setAuth(email: string) {
+    //localStorage.setItem('token', email);
     localStorage.setItem('token', email);
   }
 

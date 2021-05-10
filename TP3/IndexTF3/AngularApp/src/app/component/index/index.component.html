@@ -80,6 +80,39 @@
             </div>
         </div>
         <div class="contenedor-texto2">
+            <h3 class="climatitulo">Consulte el clima de su ciudad.</h3>
+            <div class="container p-4">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card card-body">
+                            <img class="" src="assets/logo.clima.png" alt="apiclima">
+                            <form class="city" (submit)="submitLocation(cityName)">
+                                <input type="text" class="form-control" placeholder="Nombre de la Ciudad" #cityName>
+                                <button type="submit" class="btn btn-primary btn-block" id="btn1">Buscar</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card1">
+                            <div *ngIf="weather" class="card-body">
+                                <div class="row">
+                                    <h5 class="card-title">Datos del tiempo: {{weather.name}}</h5>
+                                    <div class="col-md-6">
+                                        <p class="datos">Temperatura: {{weather.main.temp}}</p>
+                                        <p class="datos">Humedad: {{weather.main.humidity}}%</p>
+                                        <p class="datos">Sensacion termica: {{weather.main.feels_like}}</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <img src='http://openweathermap.org/img/wn/{{weather.weather[0].icon}}@2x.png'
+                                            alt="">
+                                        <p>{{weather.weather[0].description}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <p class="texto2">
                 Parque Nacional - El Palmar
             </p>

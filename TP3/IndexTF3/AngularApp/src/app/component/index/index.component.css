@@ -367,13 +367,14 @@ figure .trasera{
     background-size: cover;
     padding: calc(50vh - 50px);
     margin: auto;
+    align-items: center;
   }
   .texto2{
     width: 60%;  
     font-size: 220%;
     color: #ff7171;
     margin: auto;
-    padding-top: 30%;
+    padding-top: 20%;
     text-align: center;
   }
 
@@ -465,3 +466,39 @@ figure .trasera{
     height: 6.6rem;
   }
 }
+
+.card{
+  max-width: 45%;
+  background: #9fd8df;
+}
+
+.climatitulo{
+  margin: auto;
+  text-shadow: .5rem;
+}
+
+.h5{
+  text-align: center;
+}
+
+.card1{
+  background: #9fd8df;
+  width: 75%;
+}
+.apliclima{
+  margin: auto;
+  width: 30%;
+  height: 50%;
+
+}
+.city{
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
+#btn1{
+  width: 60%;
+  margin-left: 2rem;
+  margin-top: .5rem;
+}
+

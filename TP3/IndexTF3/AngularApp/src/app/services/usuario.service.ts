@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario.model';
 import { HttpClient } from "@angular/common/http";
-import { from, observable } from 'rxjs';
+import { from, Observable, observable } from 'rxjs';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { interfaceI } from '../models/response.interface';
 
 @Injectable({
   //providedIn: 'app-module'
@@ -10,6 +11,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class UsuarioService {
   
+  formLog: interfaceI;
   formData: Usuario;
   readonly rootURL = 'https://localhost:44350/api'
 
@@ -19,7 +21,7 @@ export class UsuarioService {
     console.log(formData);
     return this.http.post(this.rootURL+'/usuarios', formData);
   }
-  login(data : any){
-    return this.http.post(this.rootURL+'/login', data);
+  login(formLog: interfaceI) {
+    return this.http.post(this.rootURL+'/login', formLog);
   }
 }

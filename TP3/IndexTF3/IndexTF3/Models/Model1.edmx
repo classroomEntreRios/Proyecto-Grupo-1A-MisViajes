@@ -20,12 +20,13 @@
             <PropertyRef Name="usu_id" />
           </Key>
           <Property Name="usu_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="usu_nom_com" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="usu_con" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="usu_cel" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="usu_nom_com" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="usu_cor" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="usu_ali" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="usu_cel" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="usu_niv_id" Type="int" />
+          <Property Name="Token" Type="varchar" MaxLength="50" />
+          <Property Name="usu_ali" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityContainer Name="mis_viajesModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -51,12 +52,13 @@
             <PropertyRef Name="usu_id" />
           </Key>
           <Property Name="usu_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="usu_nom_com" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="usu_con" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="usu_cel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="usu_nom_com" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="usu_cor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="usu_ali" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="usu_cel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="usu_niv_id" Type="Int32" />
+          <Property Name="Token" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="true" />
+          <Property Name="usu_ali" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityContainer Name="mis_viajesEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
@@ -83,12 +85,13 @@
             <EntityTypeMapping TypeName="mis_viajesModel.Usuarios">
               <MappingFragment StoreEntitySet="Usuarios">
                 <ScalarProperty Name="usu_id" ColumnName="usu_id" />
-                <ScalarProperty Name="usu_nom_com" ColumnName="usu_nom_com" />
                 <ScalarProperty Name="usu_con" ColumnName="usu_con" />
-                <ScalarProperty Name="usu_cel" ColumnName="usu_cel" />
+                <ScalarProperty Name="usu_nom_com" ColumnName="usu_nom_com" />
                 <ScalarProperty Name="usu_cor" ColumnName="usu_cor" />
-                <ScalarProperty Name="usu_ali" ColumnName="usu_ali" />
+                <ScalarProperty Name="usu_cel" ColumnName="usu_cel" />
                 <ScalarProperty Name="usu_niv_id" ColumnName="usu_niv_id" />
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="usu_ali" ColumnName="usu_ali" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -80,6 +80,8 @@ namespace IndexTF3.Controllers
                 return BadRequest(ModelState);
             }
 
+            //usuario.usu_con = Encrypt.GetSHA256(usuario.usu_con);
+
             db.Usuarios.Add(usuario);
 
             try
@@ -133,17 +135,27 @@ namespace IndexTF3.Controllers
         }
 
         //api/usuaruio/login
-        [HttpPost]
+        /*[HttpPost]
         public Loggin Login(string email, string password)
         {
             Loggin oRespuesta = new Loggin();
             using (mis_viajesEntities db = new mis_viajesEntities())
             {
-                var lista = db.Usuarios.Where(a => a.usu_cor == email && a.usu_con == password).ToList();
+                var lista = db.Usuarios.Where(a => a.usu_cor == email && a.usu_con == password);
+
                 if (lista.Count() > 0)
                 {
                     oRespuesta.Resultado = 1;
                     oRespuesta.Mensaje = "Login correcto";
+                    oRespuesta.Datos = Guid.NewGuid().ToString();
+
+                    Usuarios oUsuario = lista.FirstOrDefault();
+                    oUsuario.Token = oRespuesta.Datos.ToString();
+
+                    db.Entry(oUsuario).State = System.Data.Entity.EntityState.Modified;
+
+                    db.SaveChanges();
+
                 }
                 else
                 {
@@ -153,6 +165,43 @@ namespace IndexTF3.Controllers
             }
 
             return oRespuesta;
-        }
+
+        }*/
+
+        /*// POST: api/login
+        [ResponseType(typeof(Usuarios))]
+        public IHttpActionResult Postlogin(string email, string password)
+        {
+            Loggin oRespuesta = new Loggin();
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var lista = db.Usuarios.Where(a => a.usu_cor == email && a.usu_con == password);
+
+            if (lista.Count() > 0)
+            {
+                oRespuesta.Resultado = 1;
+                oRespuesta.Mensaje = "Login correcto";
+                oRespuesta.Datos = Guid.NewGuid().ToString();
+
+                Usuarios oUsuario = lista.FirstOrDefault();
+                oUsuario.Token = oRespuesta.Datos.ToString();
+
+                db.Entry(oUsuario).State = System.Data.Entity.EntityState.Modified;
+
+                db.SaveChanges();
+            }
+            else
+            {
+                oRespuesta.Resultado = 0;
+                oRespuesta.Mensaje = "Login incorrecto";
+            }
+            
+            return Ok(oRespuesta);
+
+
+        }*/
     }
 }

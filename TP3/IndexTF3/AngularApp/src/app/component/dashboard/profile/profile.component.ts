@@ -20,4 +20,8 @@ export class ProfileComponent implements OnInit {
     
   }
 
+  getData(dataUser: string){
+    
+  }
+
 }

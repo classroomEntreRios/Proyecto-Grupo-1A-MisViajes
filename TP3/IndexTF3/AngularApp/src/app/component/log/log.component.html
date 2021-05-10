@@ -1,27 +1,41 @@
-<header>
-    <div class="fotoLog">
-        <div>
-            <form class="login" [formGroup]="form" (submit)="onSubmit()" >
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Ingrese su Nombre de Usuario o Email.</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <small id="emailHelp" class="form-text text-muted"></small>
-                </div>
-                <div class="form-group"> 
-                    <label for="exampleInputPassword1">Contraseña</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
-                </div>
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Recordarme</label>
-                </div>
-                <button type="submit" class="btn btn-primary">Entrar</button>
-            </form>
+<div class="fotoLog">
+    <form class="login" [formGroup]="form" (submit)="onSubmit(form)">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Ingrese su Nombre de Usuario o Email.</label>
+            <input class="form-control" type="text" formControlName="usu_cor">
+            <span class="form-text text-danger" *ngIf="ValidForm('usu_cor')">
+                Dato necesario
+            </span>
         </div>
-        <div class="container-texto2">
+        <div class="form-group">
+            <label for="exampleInputPassword1">Contraseña</label>
+            <input class="form-control" type="password" formControlName="usu_con">
+            <span class="form-text text-danger" *ngIf="ValidForm('usu_con')">
+                Dato necesario
+            </span>
         </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Recordarme</label>
+        </div>
+        <button id="btn-1" type="submit" class="btn btn-primary">Entrar</button>
+    </form>
+    <div class="container-texto2">
     </div>
-</header>
+</div>
+
+<script>
+    document.getElementById("crearCookie").addEventListener("click", crearCookie);
+    
+    function crearCookie(){
+      document.cookie = "nombre = " + form.value.usu_cor;
+      var miCookie = document.cookie;
+      alert(miCookie);
+    }
+</script>
+
+
+
 
 <div class="footer-dark">
     <footer>
@@ -54,3 +68,5 @@
             <p class="copyright">Grupo 1.A © 2020 - Entre Ríos</p>
         </div>
     </footer>
+
+   

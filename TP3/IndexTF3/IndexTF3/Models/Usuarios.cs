@@ -15,11 +15,12 @@ namespace IndexTF3.Models
     public partial class Usuarios
     {
         public int usu_id { get; set; }
-        public string usu_nom_com { get; set; }
         public string usu_con { get; set; }
-        public string usu_cel { get; set; }
+        public string usu_nom_com { get; set; }
         public string usu_cor { get; set; }
-        public string usu_ali { get; set; }
+        public string usu_cel { get; set; }
         public Nullable<int> usu_niv_id { get; set; }
+        public string Token { get; set; }
+        public string usu_ali { get; set; }
     }
 }

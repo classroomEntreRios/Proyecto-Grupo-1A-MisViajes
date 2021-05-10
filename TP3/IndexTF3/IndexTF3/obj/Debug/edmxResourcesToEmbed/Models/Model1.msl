@@ -16,12 +16,13 @@
       <EntityTypeMapping TypeName="mis_viajesModel.Usuarios">
         <MappingFragment StoreEntitySet="Usuarios">
           <ScalarProperty Name="usu_id" ColumnName="usu_id" />
-          <ScalarProperty Name="usu_nom_com" ColumnName="usu_nom_com" />
           <ScalarProperty Name="usu_con" ColumnName="usu_con" />
-          <ScalarProperty Name="usu_cel" ColumnName="usu_cel" />
+          <ScalarProperty Name="usu_nom_com" ColumnName="usu_nom_com" />
           <ScalarProperty Name="usu_cor" ColumnName="usu_cor" />
-          <ScalarProperty Name="usu_ali" ColumnName="usu_ali" />
+          <ScalarProperty Name="usu_cel" ColumnName="usu_cel" />
           <ScalarProperty Name="usu_niv_id" ColumnName="usu_niv_id" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="usu_ali" ColumnName="usu_ali" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

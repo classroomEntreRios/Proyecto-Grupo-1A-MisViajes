@@ -21,6 +21,7 @@ export class RegistroComponent implements OnInit{
     usu_con2: ['',Validators.compose([Validators.required, Validators.minLength(6)])],
     usu_cor2: ['',Validators.compose([Validators.required, Validators.email])],
     usu_cel: ['',Validators.required],
+    termsLabel: [Validators.required],    
    
   })
 
@@ -58,6 +59,7 @@ export class RegistroComponent implements OnInit{
       usu_con: "",
       usu_cel: "",
       usu_niv_id: null,
+      Token:"",
     }
   }
 
@@ -65,6 +67,7 @@ export class RegistroComponent implements OnInit{
     console.log(form.value);
     this.service.postUsuario(form.value).subscribe(res =>{
       this.resetForm(form);
+      alert("Usuario creado Correctamente.");
     } );
   }
 
